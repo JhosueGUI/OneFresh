@@ -13,6 +13,7 @@
     "@glidejs/glide": "^3.7.1",
     "aos": "^2.3.4",
     "framer-motion": "^12.16.0",
+    "ogl": "^1.0.11",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.6",
     "react": "^19.1.0",

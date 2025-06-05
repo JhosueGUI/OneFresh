@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import Carousel from '../Carousel/Carousel';
+import CircularGallery from '../Promociones/CircularGallery '
 
 function HomePage() {
   // Variantes para animaciones de entrada del texto
@@ -31,12 +32,15 @@ function HomePage() {
   return (
     <>
       <Carousel />
+      <div style={{ height: '600px', position: 'relative' }}>
+        <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
+      </div>
 
       <motion.div
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        style={{ padding: '3em', textAlign: 'center'}}
+        style={{ padding: '3em', textAlign: 'center' }}
       >
 
         <motion.h1
