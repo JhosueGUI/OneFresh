@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-
+import "./index.css"
 // Importa el tema de PrimeReact que prefieras (ej. 'lara-light-cyan')
 // Puedes explorar otros temas en la documentación de PrimeReact.
 import 'primereact/resources/themes/lara-light-cyan/theme.css';

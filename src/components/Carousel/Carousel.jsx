@@ -3,12 +3,12 @@ import "./Carousel.css"; // Mueve tu CSS aquí o usa Tailwind si prefieres
 
 const logoWebP = '/images/botella500.webp'; // Ruta correcta para acceder a la imagen en la carpeta public
 const bidonWeP = '/images/bidon.webp';
-const fondoProductos = '/images/fondo_carrousel.webp';
+const dispensadorWebP= '/images/dispensador.webp';
 
 const teamMembers = [
   { name: "Botella Personal", role: "500 ml", image: logoWebP },
   { name: "Bidones", role: "20 litros", image: bidonWeP },
-  { name: "Emma Rodriguez", role: "Lead Developer", image: logoWebP },
+  { name: "Dispensadores", role: "medida", image: dispensadorWebP },
   { name: "Julia Gimmel", role: "UX Designer", image: logoWebP },
   { name: "Lisa Anderson", role: "Marketing Manager", image: logoWebP },
   { name: "James Wilson", role: "Product Manager", image: logoWebP }
