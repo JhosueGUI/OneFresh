@@ -1,6 +1,7 @@
-// src/App.jsx
-import React, { useEffect } from 'react'; // Asegúrate de importar useEffect
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Menubar } from 'primereact/menubar';
+import { Link } from 'react-router-dom';
 import HomePage from './components/Pages/HomePage';
 import AboutPage from './components/Pages/AboutPage';
 import ContactPage from './components/Pages/ContactPage';
@@ -9,72 +10,177 @@ import TopBanner from './components/Header/TopBanner';
 import HeroBanner from './components/Header/HeroBanner';
 
 function App() {
-  // CSS para el efecto hover del contenedor del Menubar
-  const menubarHoverStyles = `
-    /* Estilo para el contenedor del Menubar cuando el cursor está encima */
-    .menubar-container-hover:hover {
-      background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco (ajusta opacidad si quieres semi-transparente) */
-    }
+  const [scrolled, setScrolled] = useState(false);
 
-    /* Cambiar el color del texto y los iconos dentro del Menubar cuando el contenedor padre está en hover */
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Items del menú
+  const items = [
+    {
+      label: 'Inicio',
+      icon: 'pi pi-home',
+      template: (item, options) => (
+        <Link to="/" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
+          <span className="p-menuitem-text">{item.label}</span>
+        </Link>
+      ),
+    },
+    {
+      label: 'Nosotros',
+      icon: 'pi pi-info-circle',
+      template: (item, options) => (
+        <Link to="/nosotros" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
+          <span className="p-menuitem-text">{item.label}</span>
+        </Link>
+      ),
+    },
+    {
+      label: 'Productos',
+      icon: 'pi pi-shopping-cart',
+      template: (item, options) => (
+        <Link to="/productos" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
+          <span className="p-menuitem-text">{item.label}</span>
+        </Link>
+      ),
+    },
+    {
+      label: 'Ventas Corporativas',
+      icon: 'pi pi-building',
+      template: (item, options) => (
+        <Link to="/ventas-corporativas" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
+          <span className="p-menuitem-text">{item.label}</span>
+        </Link>
+      ),
+    },
+    {
+      label: 'Boletín',
+      icon: 'pi pi-send',
+      template: (item, options) => (
+        <Link to="/boletin" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
+          <span className="p-menuitem-text">{item.label}</span>
+        </Link>
+      ),
+    },
+    {
+      label: 'Galería',
+      icon: 'pi pi-images',
+      template: (item, options) => (
+        <Link to="/galeria" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
+          <span className="p-menuitem-text">{item.label}</span>
+        </Link>
+      ),
+    },
+    {
+      label: 'Contacto',
+      icon: 'pi pi-envelope',
+      template: (item, options) => (
+        <Link to="/contacto" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
+          <span className="p-menuitem-text">{item.label}</span>
+        </Link>
+      ),
+    },
+  ];
+
+  const logoWebP = '/images/one-fresh-logo.webp';
+
+  const startLogo = (
+    <Link to="/" style={{ textDecoration: 'none', color: 'white', fontSize: '1.5em', fontWeight: 'bold', marginRight: '1em', display: 'flex', alignItems: 'center' }}>
+      <img
+        src={logoWebP}
+        alt="One Fresh Logo"
+        style={{ height: '60px', marginRight: '10px' }}
+      />
+    </Link>
+  );
+
+  // Estilos CSS para el hover
+  const menubarHoverStyles = `
+    .menubar-container-hover:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
     .menubar-container-hover:hover .p-menuitem-link,
     .menubar-container-hover:hover .p-menuitem-text,
     .menubar-container-hover:hover .pi,
     .menubar-container-hover:hover .p-button {
-      color: #004AAD !important; /* Texto y botones azules */
+      color: #004AAD !important;
     }
-
-    /* Asegurar que el logo también cambie de color si es un texto (no una imagen) */
-    /* Si tu logo es una imagen, esta regla no le afectará, pero si es un texto, sí. */
     .menubar-container-hover:hover .p-menubar-start a {
       color: #004AAD !important;
     }
-
-    /* Ajustar el botón de registrarse al hacer hover en el contenedor */
     .menubar-container-hover:hover .p-button-secondary {
-      background-color: #004AAD !important; /* Fondo del botón azul */
+      background-color: #004AAD !important;
       border-color: #004AAD !important;
-      color: white !important; /* Texto del botón blanco */
+      color: white !important;
     }
     .menubar-container-hover .p-button-secondary {
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición para el botón */
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     }
   `;
 
-  // useEffect para inyectar los estilos CSS en el head del documento
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = menubarHoverStyles;
     document.head.appendChild(styleElement);
-
     return () => {
       document.head.removeChild(styleElement);
     };
-  }, []); // El array vacío asegura que esto se ejecute solo una vez al montar
-
+  }, []);
 
   return (
     <Router>
-      {/* Contenedor principal para el layout flexbox */}
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <TopBanner />
-        {/* El HeroBanner ya contiene el Menubar */}
-        <HeroBanner />
+        
+        {/* Menú Sticky Global */}
+        <div
+          className="menubar-container-hover"
+          style={{
+            width: '100%',
+            position: 'sticky',
+            top: 0,
+            zIndex: 1000,
+            transition: 'all 0.3s ease-in-out',
+            backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : 'transparent',
+            backdropFilter: scrolled ? 'blur(5px)' : 'none',
+          }}
+        >
+          <Menubar 
+            model={items} 
+            start={startLogo}
+            style={{
+              backgroundColor: 'transparent',
+              color: 'white',
+              borderRadius: '0',
+              border: 'none',
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          />
+        </div>
 
         <main style={{ flexGrow: 1 }}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/nosotros" element={<HomePage />} /> {/* Assuming /nosotros maps to AboutPage */}
+            <Route path="/nosotros" element={<AboutPage />} />
             <Route path="/productos" element={<HomePage />} />
             <Route path="/ventas-corporativas" element={<HomePage />} />
             <Route path="/boletin" element={<HomePage />} />
             <Route path="/galeria" element={<HomePage />} />
-            <Route path="/contacto" element={<HomePage />} />
-            {/* Add more routes as needed */}
+            <Route path="/contacto" element={<ContactPage />} />
           </Routes>
         </main>
 
