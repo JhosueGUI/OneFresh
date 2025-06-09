@@ -5,7 +5,7 @@ const Beneficios = () => {
     return (
         <div className="general" style={{ display: 'flex', flexDirection: 'column', height: '950px', gap: '80px', background: 'rgb(220, 242, 250)', justifyContent: 'center' }}>
             <div style={{textAlign: 'center'}}>
-            <span style={{ height: '10%', fontSize: '48px', fontWeight: '500', padding: '0 10%', fontWeight: '600' }}>¡ Nuestros proceso <span style={{ color: 'rgb(0, 106, 255)' }}>productivo !</span></span>
+            <span style={{ height: '10%', fontSize: '48px', fontWeight: '500', padding: '0 10%', fontWeight: '600' }}>¡ Nuestros proceso <span style={{ color: '#1685f9' }}>productivo !</span></span>
             </div>
 
             <div className="3" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 10%', height: '55%' }} >
@@ -27,7 +27,7 @@ const Beneficios = () => {
                             />
                         </div>
                         <div className="desc" >
-                            <p style={{ fontSize: '22px', fontWeight: '600', color: 'rgb(0, 106, 255)' }}>Producción</p>
+                            <p style={{ fontSize: '22px', fontWeight: '600', color: '#1685f9' }}>Producción</p>
                             <p style={{ textAlign: 'justify' }}>Nuestra moderna planta de producción garantiza la más alta calidad en agua tratada, osmotizada, ozonizada y alcalina. </p>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ const Beneficios = () => {
                             />
                         </div>
                         <div className="desc">
-                            <p style={{ fontSize: '22px', fontWeight: '600', color: 'rgb(0, 106, 255)' }}>Almacén</p>
+                            <p style={{ fontSize: '22px', fontWeight: '600', color: '#1685f9' }}>Almacén</p>
                             <p style={{ textAlign: 'justify' }}>Nuestros productos se almacenan cuidadosamente en un ambiente con temperatura controlada a 15 °C, preservando su calidad y frescura hasta la entrega.</p>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ const Beneficios = () => {
                             />
                         </div>
                         <div className="desc" >
-                            <p style={{ fontSize: '22px', fontWeight: '600', color: 'rgb(0, 106, 255)' }}>Logística</p>
+                            <p style={{ fontSize: '22px', fontWeight: '600', color: '#1685f9' }}>Logística</p>
                             <p style={{ textAlign: 'justify' }}>Nuestro equipo de logística está comprometido con la entrega eficiente y oportuna de todos los pedidos. </p>
                         </div>
                     </div>

@@ -124,7 +124,7 @@
 }
 
 .member-name {
-  color: rgb(0, 106, 255);
+  color: #1685f9;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -139,7 +139,7 @@
   top: 100%;
   width: 100px;
   height: 2px;
-  background: rgb(0, 106, 255);
+  background: #1685f9;
 }
 
 .member-name::before {

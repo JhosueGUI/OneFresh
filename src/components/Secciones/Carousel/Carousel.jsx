@@ -61,7 +61,7 @@ const Carousel = () => {
     <div className="carousel-background-container">
       <div className="contenido" style={{ display: 'flex', flexDirection: 'column', width: '70%', gap: '40px' }}>
         <span style={{ fontSize: '48px', fontWeight: '600', display: 'flex', flexDirection: 'column' }}>Nuestras
-          <span style={{ color: 'rgb(0, 106, 255)' }}>Presentaciones</span></span>
+          <span style={{ color: '#1685f9' }}>Presentaciones</span></span>
         <span style={{ textAlign: 'justify' }}>En OneFresh, te ofrecemos soluciones completas para mantenerte hidratado: desde nuestras prácticas Botellas Personales ideales para llevar a todos lados, hasta Bidones de mayor capacidad para tu hogar u oficina, y Dispensadores que garantizan un acceso fácil y rápido al agua. Personaliza cada producto para que refleje tu estilo o marca, ¡y convierte la hidratación en una experiencia cómoda y con estilo!</span>
         <div className="1" style={{ display: 'flex', width: '100%' }}>
           <Button
@@ -74,8 +74,8 @@ const Carousel = () => {
               height: '55px',
               fontSize: '16px',
               fontWeight: '600',
-              color: 'rgb(0, 106, 255)',
-              borderColor: 'rgb(0, 106, 255)'
+              color: '#1685f9',
+              borderColor: '#1685f9'
             }}
           />
         </div>

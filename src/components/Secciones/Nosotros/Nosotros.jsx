@@ -16,7 +16,7 @@ const Nosotros = () => {
                             borderRadius: '50%',
                             width: '50px', 
                             height: '50px',
-                            backgroundColor: 'rgb(0, 106, 255)', 
+                            backgroundColor: '#1685f9', 
                             marginLeft: '30px', 
                         }}>
                             <BsArrowRight style={{ fontSize: '25px', color: '#fff' }} />
@@ -28,7 +28,7 @@ const Nosotros = () => {
                 </div>
                 <div className="3" style={{ display: 'flex', flexDirection: 'column', height: '70%', backgroundColor: ' #dcf2fa ', justifyContent: 'center' }} >
                     <div>
-                        <p style={{ fontSize: '32px', color: 'rgb(0, 106, 255)', fontWeight: '600', padding: '0 20%' }}>
+                        <p style={{ fontSize: '32px', color: '#1685f9', fontWeight: '600', padding: '0 20%' }}>
                             ¿Quiénes somos?
                         </p>
                         <p style={{ fontSize: '15px', padding: '0 20%', textAlign: 'justify' }}>

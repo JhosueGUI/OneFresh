@@ -7,7 +7,7 @@ const Listos = () => {
     return (
         <div className="general" style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '500px', gap: '20px', gap: '40px', justifyContent: 'center', background: 'rgb(220, 242, 250)', alignItems: 'center' }}>
             <div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
-                <span style={{ fontSize: '48px', fontWeight: '600', textAlign: 'center' }}>¡Estamos listos para <span style={{ color: 'rgb(0, 106, 255)' }}>atenderte!</span></span>
+                <span style={{ fontSize: '48px', fontWeight: '600', textAlign: 'center' }}>¡Estamos listos para <span style={{ color: '#1685f9' }}>atenderte!</span></span>
             </div>
             <div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', gap: '40px' }}>
                 <span style={{ fontSize: '20px', justifyContent: 'center', display: 'flex', alignItems: 'center',gap:'10px' }}>
@@ -37,7 +37,7 @@ const Listos = () => {
                         fontSize: '16px',
                         fontWeight: '600',
                         color: '#fff',
-                        background: 'rgb(0, 106, 255)'
+                        background: '#1685f9'
                     }}
                 />
             </div>

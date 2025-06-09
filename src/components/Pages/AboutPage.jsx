@@ -31,7 +31,7 @@ function AboutPage() {
       <div className="2" >
         <img src="/iconos/nosotros/3.svg" alt="One Fresh" style={{ width: '100%', height: '100%' ,padding:'10%'}} />
         <div style={{display:'flex' ,gap:'20px' , justifyContent:'center', alignItems:'center'}}>
-          <span style={{ fontSize: '48px', fontWeight: '600' }}>Nuestros<span style={{color:'rgb(0, 106, 255)'}}>Valores</span> </span>
+          <span style={{ fontSize: '48px', fontWeight: '600' }}>Nuestros<span style={{color:'#1685f9'}}>Valores</span> </span>
         </div>
         <div>
           <div>

@@ -48,7 +48,7 @@ function Footer() {
       </div>
 
       {/* Barra inferior */}
-      <div style={{ display: 'flex', backgroundColor: 'rgb(0, 106, 255)', padding: '1em 0', textAlign: 'center', marginTop: '2em', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', backgroundColor: '#1685f9', padding: '1em 0', textAlign: 'center', marginTop: '2em', justifyContent: 'center' }}>
         <div style={{ display: 'flex', width: '90%', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5em' }}>
           <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Términos y condiciones</a>
           <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Políticas de privacidad</a>
