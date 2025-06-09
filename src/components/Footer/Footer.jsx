@@ -26,20 +26,20 @@ function Footer() {
 
           {/* Acerca de Nosotros */}
           <div >
-            <p style={{fontSize:'20px',fontWeight:'600',color:'#332F30'}}>Acerca de Nosotros</p>
+            <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Acerca de Nosotros</p>
             <p style={{color:'#332F30'}}><a href="#" style={{ textDecoration: 'underline' }}>¿Quiénes somos?</a></p>
           </div>
 
           {/* Sedes */}
           <div >
-            <p style={{fontSize:'20px',fontWeight:'600',color:'#332F30'}}>Sede</p>
-            <p  >Calle Piura Mz B Lt 8-A  Lurigancho – Lima</p>
+            <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Sede</p>
+            <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/ubicacion.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} />Calle Piura Mz B Lt 8-A  Lurigancho – Lima</p>
             <p><a href="#" style={{ textDecoration: 'underline' }}>Ver más...</a></p>
           </div>
 
           {/* Contacto */}
           <div >
-            <p style={{fontSize:'20px',fontWeight:'600',color:'#332F30'}}>Contacto</p>
+            <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Contacto</p>
             <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/telefono.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> (51) 908 906 872</p>
             <p style={{ display: 'flex',color:'#332F30'}}><img src="/iconos/listos/correo.png" alt="Correo" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> ventas@jrprodesa.pe</p>
           </div>
@@ -48,7 +48,7 @@ function Footer() {
       </div>
 
       {/* Barra inferior */}
-      <div style={{ display: 'flex', backgroundColor: '#1685f9', padding: '1em 0', textAlign: 'center', marginTop: '2em', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', backgroundColor: 'rgb(22, 133, 249)', padding: '1em 0', textAlign: 'center', marginTop: '2em', justifyContent: 'center' }}>
         <div style={{ display: 'flex', width: '90%', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5em' }}>
           <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Términos y condiciones</a>
           <a href="#" style={{ color: 'white', textDecoration: 'none' }}>Políticas de privacidad</a>

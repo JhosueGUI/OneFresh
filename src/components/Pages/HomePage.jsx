@@ -22,10 +22,6 @@ function HomePage() {
         <div style={{marginTop:'200px'}}>
           <Listos/>
         </div>
-        
-
-
-
     </>
   );
 }
