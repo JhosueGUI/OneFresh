@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Carousel.css"; // Mueve tu CSS aquí o usa Tailwind si prefieres
+import { Button } from "primereact/button";
 
 const logoWebP = '/images/botella500.webp'; // Ruta correcta para acceder a la imagen en la carpeta public
 const bidonWeP = '/images/bidon.webp';
-const dispensadorWebP= '/images/dispensador.webp';
+const dispensadorWebP = '/images/dispensador.webp';
 
 const teamMembers = [
-  { name: "Botella Personal", role: "500 ml", image: logoWebP },
   { name: "Bidones", role: "20 litros", image: bidonWeP },
+  { name: "Botella Personal", role: "500 ml", image: logoWebP },
   { name: "Dispensadores", role: "medida", image: dispensadorWebP },
-  { name: "Julia Gimmel", role: "UX Designer", image: logoWebP },
-  { name: "Lisa Anderson", role: "Marketing Manager", image: logoWebP },
-  { name: "James Wilson", role: "Product Manager", image: logoWebP }
 ];
 
 const Carousel = () => {
@@ -58,9 +56,31 @@ const Carousel = () => {
   });
 
   return (
+
     // Nuevo div que envuelve el carrusel con la imagen de fondo
     <div className="carousel-background-container">
-      <div className="carousel-container"style={{display:'flex', flexDirection: 'column'}}>
+      <div className="contenido" style={{ display: 'flex', flexDirection: 'column', width: '70%', gap: '40px' }}>
+        <span style={{ fontSize: '48px', fontWeight: '600', display: 'flex', flexDirection: 'column' }}>Nuestras
+          <span style={{ color: 'rgb(0, 106, 255)' }}>Presentaciones</span></span>
+        <span style={{ textAlign: 'justify' }}>En OneFresh, te ofrecemos soluciones completas para mantenerte hidratado: desde nuestras prácticas Botellas Personales ideales para llevar a todos lados, hasta Bidones de mayor capacidad para tu hogar u oficina, y Dispensadores que garantizan un acceso fácil y rápido al agua. Personaliza cada producto para que refleje tu estilo o marca, ¡y convierte la hidratación en una experiencia cómoda y con estilo!</span>
+        <div className="1" style={{ display: 'flex', width: '100%' }}>
+          <Button
+            label="Consultar ahora"
+            className="p-button-outlined"
+            icon="pi pi-angle-right"
+            iconPos="right"
+            style={{
+              borderRadius: '10px',
+              height: '55px',
+              fontSize: '16px',
+              fontWeight: '600',
+              color: 'rgb(0, 106, 255)',
+              borderColor: 'rgb(0, 106, 255)'
+            }}
+          />
+        </div>
+      </div>
+      <div className="carousel-container" style={{ display: 'flex', flexDirection: 'column' }}>
         <div className="carousel-track">
           {teamMembers.map((member, i) => {
             const offset = (i - currentIndex + teamMembers.length) % teamMembers.length;
@@ -95,28 +115,19 @@ const Carousel = () => {
 
         </div>
 
-        <div className="nav-arrow left" onClick={() => updateCarousel(currentIndex - 1)}>
+        {/* <div className="nav-arrow left" onClick={() => updateCarousel(currentIndex - 1)}>
           &#8249;
         </div>
         <div className="nav-arrow right" onClick={() => updateCarousel(currentIndex + 1)}>
           &#8250;
-        </div>
+        </div> */}
 
         <div className="member-info">
           <div className="member-name">{teamMembers[currentIndex].name}</div>
           <div className="member-role">{teamMembers[currentIndex].role}</div>
         </div>
-
-        <div className="dots">
-          {teamMembers.map((_, i) => (
-            <div
-              key={i}
-              className={`dot ${i === currentIndex ? "active" : ""}`}
-              onClick={() => updateCarousel(i)}
-            ></div>
-          ))}
-        </div>
       </div>
+
     </div>
   );
 };

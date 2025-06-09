@@ -4,6 +4,7 @@ import Carousel from '../Secciones/Carousel/Carousel';
 import CircularGallery from '../Secciones/Promociones/CircularGallery ';
 import Nosotros from '../Secciones/Nosotros/Nosotros';
 import Beneficios from '../Secciones/Beneficios/Beneficios';
+import Listos from '../Secciones/Listos/Listos';
 
 function HomePage() {
   return (
@@ -16,7 +17,13 @@ function HomePage() {
         <div style={{marginTop:'200px'}}>
         <Beneficios/>
         </div>
-        <Carousel /></div>
+        <Carousel />
+        </div>
+        <div style={{marginTop:'200px'}}>
+          <Listos/>
+        </div>
+        
+
 
 
     </>

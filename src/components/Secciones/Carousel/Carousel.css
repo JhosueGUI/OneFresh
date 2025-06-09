@@ -9,7 +9,6 @@
 }
 
 .carousel-background-container {
-  background-image: url('/images/fondo_carrousel.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +18,7 @@
   justify-content: center;
   align-items: center;
   position: relative; /* Crucial for absolute positioning of nav arrows */
-  padding: 20px 0; /* Keep some vertical padding */
+  padding: 0 10%; /* Keep some vertical padding */
   height: 800px; /* Give it a fixed height or set based on content */
 }
 
@@ -35,7 +34,7 @@
 
 .carousel-track {
   width: 100%;
-  height: 100%; /* Occupy full height of carousel-container */
+  height: 80%; /* Occupy full height of carousel-container */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,8 +44,8 @@
 }
 
 .card {
+  margin-right: 25%;
   position: absolute;
-  width: 280px;
   height: 380px;
   background: white;
   border-radius: 20px;
@@ -121,10 +120,11 @@
 .member-info {
   text-align: center;
   transition: all 0.5s ease-out;
+  margin-left: 15%;
 }
 
 .member-name {
-  color: rgb(8, 42, 123);
+  color: rgb(0, 106, 255);
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -139,7 +139,7 @@
   top: 100%;
   width: 100px;
   height: 2px;
-  background: rgb(8, 42, 123);
+  background: rgb(0, 106, 255);
 }
 
 .member-name::before {
@@ -157,7 +157,6 @@
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding: 10px 0;
   position: relative;
 }
 

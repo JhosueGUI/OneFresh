@@ -4,41 +4,42 @@ import { motion } from 'framer-motion';
 import { Panel } from 'primereact/panel';
 
 function AboutPage() {
-  const pageVariants = {
-    initial: { opacity: 0, x: -100 },
-    in: { opacity: 1, x: 0 },
-    out: { opacity: 0, x: 100 },
-  };
 
-  const pageTransition = {
-    type: 'tween',
-    ease: 'anticipate',
-    duration: 0.8,
-  };
 
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      style={{ padding: '3em', maxWidth: '900px', margin: '3em auto' }}
-    >
-      <Panel header="Acerca de Nosotros" style={{ boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
-        <h2 style={{ marginBottom: '1em', color: '#444' }}>Nuestra Misión</h2>
-        <p style={{ lineHeight: '1.6', marginBottom: '1.5em' }}>
-          En este proyecto, nos dedicamos a construir experiencias web de vanguardia.
-          Creemos que el diseño moderno, la interactividad fluida y un rendimiento
-          excepcional son clave para una presencia en línea impactante.
-        </p>
-        <h2 style={{ marginBottom: '1em', color: '#444' }}>Nuestro Equipo</h2>
-        <p style={{ lineHeight: '1.6' }}>
-          Somos un equipo apasionado de desarrolladores y diseñadores enfocados en crear
-          soluciones innovadoras que no solo funcionan, sino que también deleitan a los usuarios.
-        </p>
-      </Panel>
-    </motion.div>
+    <div className="main">
+      <div className="div" style={{ background: 'rgb(220, 242, 250)', height: '500px', display: 'flex', alignItems: 'center', gap: '20px', padding: '0 20%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4%', background: 'rgb(25, 151, 197)',width:'50%',height:'70%' }}>
+          <span style={{ fontSize: '40px', fontWeight: '600' }}>
+            <img src="/iconos/nosotros/1.svg" alt="One Fresh" style={{ width: '100px', height: '100px' }} />
+            Misión
+          </span>
+          <span style={{ textAlign: 'justify' }}>
+            Ofrecer productos con los mas altos estándares de calidad que satisfagan a nuestros clientes, con un equipo humano motivado por sus principios éticos para así proyectar una imagen de solidez y responsabilidad en el mercado local, regional y nacional.
+          </span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4%', background: 'rgb(25, 151, 197)',width:'50%',height:'70%' }}>
+          <span style={{ fontSize: '40px', fontWeight: '600' }}>
+            <img src="/iconos/nosotros/2.svg" alt="One Fresh" style={{ width: '100px', height: '100px' }} />
+            Visión
+          </span>
+          <span style={{ textAlign: 'justify' }}>
+            Ser una empresa líder a nivel nacional en el mercado de agua tratada y embotellada, siendo la calidad un factor trascendental en nuestra operación, distribución y servicio integral.
+          </span>
+        </div>
+      </div>
+      <div className="2" >
+        <img src="/iconos/nosotros/3.svg" alt="One Fresh" style={{ width: '100%', height: '100%' ,padding:'10%'}} />
+        <div style={{display:'flex' ,gap:'20px' , justifyContent:'center', alignItems:'center'}}>
+          <span style={{ fontSize: '48px', fontWeight: '600' }}>Nuestros<span style={{color:'rgb(0, 106, 255)'}}>Valores</span> </span>
+        </div>
+        <div>
+          <div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -12,9 +12,8 @@ function Footer() {
             <img
               src={logoWebP}
               alt="One Fresh Logo"
-              style={{ height: '60px', marginRight: '10px' }}
+              style={{ height: '100px', marginRight: '10px' }}
             />
-            <p style={{ color: '#004AAD' }}>Estamos bien todos.</p>
           </div>
 
           {/* Lista de Exámenes */}
@@ -27,24 +26,22 @@ function Footer() {
 
           {/* Acerca de Nosotros */}
           <div >
-            <h4>Acerca de Nosotros</h4>
-            <p><a href="#" style={{ textDecoration: 'underline' }}>¿Quiénes somos?</a></p>
+            <p style={{fontSize:'20px',fontWeight:'600',color:'#332F30'}}>Acerca de Nosotros</p>
+            <p style={{color:'#332F30'}}><a href="#" style={{ textDecoration: 'underline' }}>¿Quiénes somos?</a></p>
           </div>
 
           {/* Sedes */}
           <div >
-            <h4>Sedes</h4>
-            <p>Ate</p>
-            <p>Callao</p>
-            <p>Comas</p>
+            <p style={{fontSize:'20px',fontWeight:'600',color:'#332F30'}}>Sede</p>
+            <p  >Calle Piura Mz B Lt 8-A  Lurigancho – Lima</p>
             <p><a href="#" style={{ textDecoration: 'underline' }}>Ver más...</a></p>
           </div>
 
           {/* Contacto */}
           <div >
-            <h4>Contacto</h4>
-            <p>📞 (01) 652-6328</p>
-            <p>✉️ contacto@lab-u.org</p>
+            <p style={{fontSize:'20px',fontWeight:'600',color:'#332F30'}}>Contacto</p>
+            <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/telefono.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> (51) 908 906 872</p>
+            <p style={{ display: 'flex',color:'#332F30'}}><img src="/iconos/listos/correo.png" alt="Correo" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> ventas@jrprodesa.pe</p>
           </div>
 
         </div>

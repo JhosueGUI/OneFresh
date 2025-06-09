@@ -1,27 +1,86 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "primereact/button";
 
 const Beneficios = () => {
     return (
-        <div className="general" style={{ height: '600px',gap:'20px',gap:'40px' }}>
-            <div className="contenido" style={{ display: 'flex', flexDirection: 'column' }}>
-                <div className="1" style={{ height: '10%',display:'flex',justifyContent:'space-between', alignItems:'center' }}> 
-                    <p style={{fontSize:'48px',fontWeight:'500',padding:'0 10%',color:'rgb(0, 106, 255)',fontWeight:'600'}}>Nuestros Beneficios</p>
-                    <p style={{fontSize:'20px',fontWeight:'500',padding:'0 10%'}}>Nuestros Beneficios</p>
-                </div>
-                <div className="3" style={{ display:'flex',flexDirection:'column', height: '70%', backgroundColor: ' #dcf2fa ',justifyContent:'center' }} >
-                    <div>
-                        <p style={{fontSize:'32px',color:'rgb(0, 106, 255)',fontWeight:'600',padding:'0 20%'}}>
-                            Beneficios de nuestros productos
-                        </p>
-                        <p style={{fontSize:'15px',padding:'0 20%',textAlign:'justify'}}>
-                            En One Fresh, nos comprometemos a ofrecerte productos de la más alta calidad. Nuestros beneficios incluyen agua purificada y embotellada que cumple con los estándares más exigentes, garantizando pureza y frescura en cada gota.
-                        </p>
+        <div className="general" style={{ display: 'flex', flexDirection: 'column', height: '950px', gap: '80px', background: 'rgb(220, 242, 250)', justifyContent: 'center' }}>
+            <div style={{textAlign: 'center'}}>
+            <span style={{ height: '10%', fontSize: '48px', fontWeight: '500', padding: '0 10%', fontWeight: '600' }}>¡ Nuestros proceso <span style={{ color: 'rgb(0, 106, 255)' }}>productivo !</span></span>
+            </div>
+
+            <div className="3" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 10%', height: '55%' }} >
+                <div className="1" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', width: '30%', height: '100%', borderRadius: '29px', background: 'white' }}>
+                    <div className="titulo" style={{ display: 'flex', flexDirection: 'column', padding: '10%' }}>
+                        <div className="icono">
+                            <motion.img
+                                src="/images/proceso/1.webp"
+                                alt="Beneficio 1"
+                                initial={{ opacity: 0, y: -50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    borderTopLeftRadius: '20px',
+                                    borderTopRightRadius: '20px'
+                                }}
+                            />
+                        </div>
+                        <div className="desc" >
+                            <p style={{ fontSize: '22px', fontWeight: '600', color: 'rgb(0, 106, 255)' }}>Producción</p>
+                            <p style={{ textAlign: 'justify' }}>Nuestra moderna planta de producción garantiza la más alta calidad en agua tratada, osmotizada, ozonizada y alcalina. </p>
+                        </div>
                     </div>
                 </div>
+                <div className="1" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', width: '30%', height: '100%', borderRadius: '29px', background: 'white' }}>
+                    <div className="titulo" style={{ display: 'flex', flexDirection: 'column', padding: '10%' }}>
+                        <div className="icono">
+                            <motion.img
+                                src="/images/proceso/2.webp"
+                                alt="Beneficio 1"
+                                initial={{ opacity: 0, y: -50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    borderTopLeftRadius: '20px',
+                                    borderTopRightRadius: '20px'
+                                }}
+                            />
+                        </div>
+                        <div className="desc">
+                            <p style={{ fontSize: '22px', fontWeight: '600', color: 'rgb(0, 106, 255)' }}>Almacén</p>
+                            <p style={{ textAlign: 'justify' }}>Nuestros productos se almacenan cuidadosamente en un ambiente con temperatura controlada a 15 °C, preservando su calidad y frescura hasta la entrega.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="1" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', width: '30%', height: '100%', borderRadius: '29px', background: 'white' }}>
+                    <div className="titulo" style={{ display: 'flex', flexDirection: 'column', padding: '10%' }}>
+                        <div className="icono">
+                            <motion.img
+                                src="/images/proceso/1.webp"
+                                alt="Beneficio 1"
+                                initial={{ opacity: 0, y: -50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    borderTopLeftRadius: '20px',
+                                    borderTopRightRadius: '20px'
+                                }}
+                            />
+                        </div>
+                        <div className="desc" >
+                            <p style={{ fontSize: '22px', fontWeight: '600', color: 'rgb(0, 106, 255)' }}>Logística</p>
+                            <p style={{ textAlign: 'justify' }}>Nuestro equipo de logística está comprometido con la entrega eficiente y oportuna de todos los pedidos. </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
+
         </div>
     );
 };

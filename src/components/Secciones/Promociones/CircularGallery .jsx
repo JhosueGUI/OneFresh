@@ -474,9 +474,9 @@ export default function CircularGallery({
 
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <p style={{fontSize:'48px', fontWeight:'600', color:'rgb(0, 106, 255)'}}>Nuestras Promociones</p>
-        <p>Desliza y Descubre las promociones vigentes que Agua One Fresh tiene para ti</p>
+      <div style={{ textAlign: 'center',display:'flex',flexDirection:'column' }}>
+        <span style={{fontSize:'48px', fontWeight:'600', color:'rgb(0, 106, 255)'}}>Nuestras Promociones</span>
+        <span style={{fontSize:'20px'}}>Desliza y Descubre las promociones vigentes que Agua One Fresh tiene para ti</span>
       </div>
       <div className='circular-gallery' ref={containerRef} />
     </>
