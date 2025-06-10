@@ -29,7 +29,7 @@ function HomePage() {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, []); 
 
   return (
     <>
