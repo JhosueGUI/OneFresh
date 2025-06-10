@@ -9,7 +9,7 @@ function AboutPage() {
   return (
     <div className="main">
       <div className="div" style={{ background: 'rgb(220, 242, 250)', height: '500px', display: 'flex', alignItems: 'center', gap: '20px', padding: '0 20%' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4%', background: 'rgb(25, 151, 197)',width:'50%',height:'70%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4%', background: 'rgb(25s, 151, 197)',width:'50%',height:'70%' }}>
           <span style={{ fontSize: '40px', fontWeight: '600' }}>
             <img src="/iconos/nosotros/1.svg" alt="One Fresh" style={{ width: '100px', height: '100px' }} />
             Misión
@@ -31,7 +31,7 @@ function AboutPage() {
       <div className="2" >
         <img src="/iconos/nosotros/3.svg" alt="One Fresh" style={{ width: '100%', height: '100%' ,padding:'10%'}} />
         <div style={{display:'flex' ,gap:'20px' , justifyContent:'center', alignItems:'center'}}>
-          <span style={{ fontSize: '48px', fontWeight: '600' }}>Nuestros<span style={{color:'rgb(0, 106, 255)'}}>Valores</span> </span>
+          <span style={{ fontSize: '48px', fontWeight: '600' }}>Nuestros<span style={{color:'#1685f9'}}>Valores</span> </span>
         </div>
         <div>
           <div>
