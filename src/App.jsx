@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
-import { Link } from 'react-router-dom';
 import HomePage from './components/Pages/HomePage';
 import AboutPage from './components/Pages/AboutPage';
 import ContactPage from './components/Pages/ContactPage';
@@ -21,7 +20,6 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Items del menú
   const items = [
     {
       label: 'Inicio',
@@ -99,15 +97,10 @@ function App() {
 
   const startLogo = (
     <Link to="/" style={{ textDecoration: 'none', color: 'white', fontSize: '1.5em', fontWeight: 'bold', marginRight: '1em', display: 'flex', alignItems: 'center' }}>
-      <img
-        src={logoWebP}
-        alt="One Fresh Logo"
-        style={{ height: '60px', marginRight: '10px' }}
-      />
+      <img src={logoWebP} alt="One Fresh Logo" style={{ height: '60px', marginRight: '10px' }} />
     </Link>
   );
 
-  // Estilos CSS para el hover
   const menubarHoverStyles = `
     .menubar-container-hover:hover {
       background-color: rgba(255, 255, 255, 0.9);
@@ -129,6 +122,14 @@ function App() {
     .menubar-container-hover .p-button-secondary {
       transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1001;
+      cursor: pointer;
+    }
   `;
 
   useEffect(() => {
@@ -144,8 +145,7 @@ function App() {
     <Router>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <TopBanner />
-        
-        {/* Menú Sticky Global */}
+
         <div
           className="menubar-container-hover"
           style={{
@@ -158,8 +158,8 @@ function App() {
             backdropFilter: scrolled ? 'blur(5px)' : 'none',
           }}
         >
-          <Menubar 
-            model={items} 
+          <Menubar
+            model={items}
             start={startLogo}
             style={{
               backgroundColor: 'transparent',
@@ -186,6 +186,20 @@ function App() {
         </main>
 
         <Footer />
+
+        {/* Botón flotante de WhatsApp */}
+        <a
+          href="https://wa.me/51908906872?text=Hola,%20quiero%20más%20información%20sobre%20sus%20productos"
+          className="whatsapp-float"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/iconos/what/WhatsApp.svg"
+            alt="WhatsApp"
+            style={{ width: '60px', height: '60px' }}
+          />
+        </a>
       </div>
     </Router>
   );
