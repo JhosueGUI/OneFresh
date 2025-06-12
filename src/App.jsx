@@ -8,6 +8,7 @@ import ContactPage from './components/Pages/ContactPage';
 import Footer from './components/Footer/Footer';
 import TopBanner from './components/Header/TopBanner';
 import HeroBanner from './components/Header/HeroBanner';
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);

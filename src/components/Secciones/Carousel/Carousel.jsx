@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./Carousel.css"; // Mueve tu CSS aquí o usa Tailwind si prefieres
+import "./Carousel.css";
 import { Button } from "primereact/button";
+import { motion } from "framer-motion"; // Importa framer-motion
 
-const logoWebP = '/images/botella500.webp'; // Ruta correcta para acceder a la imagen en la carpeta public
+const logoWebP = '/images/botella500.webp';
 const bidonWeP = '/images/bidon.webp';
 const dispensadorWebP = '/images/dispensador.webp';
 
@@ -56,13 +57,27 @@ const Carousel = () => {
   });
 
   return (
-
-    // Nuevo div que envuelve el carrusel con la imagen de fondo
-    <div className="carousel-background-container">
-      <div className="contenido" style={{ display: 'flex', flexDirection: 'column', width: '70%', gap: '40px' }}>
-        <span style={{ fontSize: '48px', fontWeight: '600', display: 'flex', flexDirection: 'column' }}>Nuestras
-          <span style={{ color: '#1685f9' }}>Presentaciones</span></span>
-        <span style={{ textAlign: 'justify' }}>En OneFresh, te ofrecemos soluciones completas para mantenerte hidratado: desde nuestras prácticas Botellas Personales ideales para llevar a todos lados, hasta Bidones de mayor capacidad para tu hogar u oficina, y Dispensadores que garantizan un acceso fácil y rápido al agua. Personaliza cada producto para que refleje tu estilo o marca, ¡y convierte la hidratación en una experiencia cómoda y con estilo!</span>
+    <motion.div
+      className="carousel-background-container"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <motion.div
+        className="contenido"
+        style={{ display: 'flex', flexDirection: 'column', width: '70%', gap: '40px' }}
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <span style={{ fontSize: '48px', fontWeight: '600', display: 'flex', flexDirection: 'column' }}>
+          Nuestras <span style={{ color: '#1685f9' }}>Presentaciones</span>
+        </span>
+        <span style={{ textAlign: 'justify' }}>
+          En OneFresh, te ofrecemos soluciones completas para mantenerte hidratado: desde nuestras prácticas Botellas Personales ideales para llevar a todos lados, hasta Bidones de mayor capacidad para tu hogar u oficina, y Dispensadores que garantizan un acceso fácil y rápido al agua. Personaliza cada producto para que refleje tu estilo o marca, ¡y convierte la hidratación en una experiencia cómoda y con estilo!
+        </span>
         <div className="1" style={{ display: 'flex', width: '100%' }}>
           <Button
             label="Consultar ahora"
@@ -79,8 +94,16 @@ const Carousel = () => {
             }}
           />
         </div>
-      </div>
-      <div className="carousel-container" style={{ display: 'flex', flexDirection: 'column' }}>
+      </motion.div>
+
+      <motion.div
+        className="carousel-container"
+        style={{ display: 'flex', flexDirection: 'column' }}
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         <div className="carousel-track">
           {teamMembers.map((member, i) => {
             const offset = (i - currentIndex + teamMembers.length) % teamMembers.length;
@@ -94,7 +117,7 @@ const Carousel = () => {
             else cardClass += " hidden";
 
             return (
-              <div
+              <motion.div
                 key={i}
                 className={cardClass}
                 onClick={() => updateCarousel(i)}
@@ -103,19 +126,22 @@ const Carousel = () => {
                   touchEndX.current = e.changedTouches[0].screenX;
                   handleSwipe();
                 }}
+                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <img src={member.image} alt={member.name} />
                 <div className="member-info">
                   <div className="member-name">{member.name}</div>
                   <div className="member-role">{member.role}</div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-
         </div>
 
-        {/* <div className="nav-arrow left" onClick={() => updateCarousel(currentIndex - 1)}>
+        {/* Flechas desactivadas por ahora
+        <div className="nav-arrow left" onClick={() => updateCarousel(currentIndex - 1)}>
           &#8249;
         </div>
         <div className="nav-arrow right" onClick={() => updateCarousel(currentIndex + 1)}>
@@ -126,9 +152,8 @@ const Carousel = () => {
           <div className="member-name">{teamMembers[currentIndex].name}</div>
           <div className="member-role">{teamMembers[currentIndex].role}</div>
         </div>
-      </div>
-
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

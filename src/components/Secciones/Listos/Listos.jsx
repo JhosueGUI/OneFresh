@@ -1,30 +1,51 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "primereact/button";
-import { BsArrowRight } from 'react-icons/bs';
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
 
 const Listos = () => {
     return (
-        <div className="general" style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '500px', gap: '20px', gap: '40px', justifyContent: 'center', background: 'rgb(220, 242, 250)', alignItems: 'center' }}>
-            <div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
-                <span style={{ fontSize: '48px', fontWeight: '600', textAlign: 'center' }}>¡Estamos listos para <span style={{ color: '#1685f9' }}>atenderte!</span></span>
-            </div>
-            <div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', gap: '40px' }}>
-                <span style={{ fontSize: '20px', justifyContent: 'center', display: 'flex', alignItems: 'center',gap:'10px' }}>
+        <motion.div
+            className="general"
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+                height: '500px',
+                gap: '40px',
+                justifyContent: 'center',
+                background: 'rgb(22, 133, 249)',
+                alignItems: 'center'
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+        >
+            <motion.div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center' }} variants={fadeInUp}>
+                <span style={{ fontSize: '48px', fontWeight: '600', textAlign: 'center', color: '#fff' }}>
+                    ¡Estamos listos para <span style={{ color: '#a1e1e8' }}>atenderte!</span>
+                </span>
+            </motion.div>
+
+            <motion.div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', gap: '40px' }} variants={fadeInUp}>
+                <span style={{ fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
                     <img src="/iconos/listos/telefono.png" alt="Telefono" style={{ width: '40px', height: '40px', marginRight: '8px' }} />
                     +51 908 906 872
                 </span>
 
-                {/* Línea divisoria */}
-                <div style={{ width: '1px', height: '40px', backgroundColor: '#332F30' }} />
+                <div style={{ width: '1px', height: '40px', backgroundColor: '#fff' }} />
 
-                <span style={{ fontSize: '20px', justifyContent: 'center', display: 'flex', alignItems: 'center',gap:'10px' }}>
+                <span style={{ fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
                     <img src="/iconos/listos/correo.png" alt="Correo" style={{ width: '40px', height: '40px', marginRight: '8px' }} />
                     ventas@jrprodesa.pe
                 </span>
-            </div>
+            </motion.div>
 
-            <div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+            <motion.div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center' }} variants={fadeInUp}>
                 <Button
                     label="Consultar ahora"
                     className="p-button-outlined"
@@ -40,9 +61,8 @@ const Listos = () => {
                         background: '#1685f9'
                     }}
                 />
-            </div>
-
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 

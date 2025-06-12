@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Carousel from '../Secciones/Carousel/Carousel';
 import CircularGallery from '../Secciones/Promociones/CircularGallery ';
 import Nosotros from '../Secciones/Nosotros/Nosotros';
 import Beneficios from '../Secciones/Beneficios/Beneficios';
 import Listos from '../Secciones/Listos/Listos';
+
+// Animaciones para secciones
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+// Animaciones solo para texto
+const textFadeInVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
 
 function HomePage() {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -11,12 +24,10 @@ function HomePage() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { innerWidth, innerHeight } = window;
+      const relativeX = (e.clientX / innerWidth) - 0.5;
+      const relativeY = (e.clientY / innerHeight) - 0.5;
+      const factor = 40;
 
-      // Calcula la posición relativa (0.5 es el centro)
-      const relativeX = (e.clientX / innerWidth) - 0.5; // -0.5 a 0.5
-      const relativeY = (e.clientY / innerHeight) - 0.5; // -0.5 a 0.5
-
-      const factor = 40; // Ajusta según el efecto que desees
       setOffset({
         x: -relativeX * factor,
         y: -relativeY * factor
@@ -24,16 +35,13 @@ function HomePage() {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-
-    // Limpia el evento al desmontar el componente
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []); 
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '150px' }}>
+        {/* Hero Section */}
         <div
           style={{
             height: '100vh',
@@ -42,32 +50,52 @@ function HomePage() {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            position: 'relative' // necesario para posicionar el overlay
+            position: 'relative',
+            gap: '40px',
           }}
         >
-          <span style={{ fontSize: '20px', fontWeight: '600' }}>
-            El agua no es nada más que vida.
-          </span>
-          <h1 style={{ color: '#ffffff', fontSize: '48px', fontWeight: 'bold' }}>
-            Gran sabor, fresco y consistente
-          </h1>
+          <div style={{display:'flex',flexDirection:'column',alignItems:'center',zIndex:2}}>
+            <motion.span
+              variants={textFadeInVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.3 }}
+              style={{ fontSize: '30px', fontWeight: '600', color: '#a1e1e8', marginBottom: '20px' }}
+            >
+              El agua no es nada más que vida.
+            </motion.span>
+
+            <motion.span
+              variants={textFadeInVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.6 }}
+              style={{ color: '#ffffff', fontSize: '48px', fontWeight: 'bold' }}
+            >
+              Gran sabor, fresco y consistente
+            </motion.span>
+          </div>
+
+
           <img
             src="/images/fondo.webp"
             alt="One Fresh Logo"
             style={{ marginBottom: '20px', zIndex: '2' }}
           />
+
+          {/* Ice Parallax */}
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               position: 'absolute',
-              marginTop: '190px', // ajusta la posición vertical
+              marginTop: '220px',
               left: 0,
               width: '100%',
               height: '400px',
-              pointerEvents: 'none', // para no interceptar clics si no quieres
-              zIndex: 1 // ajusta según tu diseño
+              pointerEvents: 'none',
+              zIndex: 1
             }}
           >
             <img
@@ -92,18 +120,59 @@ function HomePage() {
           </div>
         </div>
 
-        <Nosotros />
-        <div style={{ height: '600px' }}>
+        {/* Nosotros Section */}
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <Nosotros />
+        </motion.div>
+
+        {/* CircularGallery Section */}
+        <motion.div
+          style={{ height: '600px' }}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
-        </div>
-        <div style={{ marginTop: '200px' }}>
+        </motion.div>
+
+        {/* Beneficios Section */}
+        <motion.div
+          style={{ marginTop: '200px' }}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <Beneficios />
-        </div>
-        <Carousel />
+        </motion.div>
+
+        {/* Carousel Section */}
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <Carousel />
+        </motion.div>
       </div>
-      <div style={{ marginTop: '200px' }}>
+
+      {/* Listos Section */}
+      <motion.div
+        style={{ marginTop: '200px' }}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+      >
         <Listos />
-      </div>
+      </motion.div>
     </>
   );
 }
