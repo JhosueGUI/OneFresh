@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Carousel.css";
 import { Button } from "primereact/button";
-import { motion } from "framer-motion"; // Importa framer-motion
+import { motion } from "framer-motion";
 
 const logoWebP = '/images/botella500.webp';
 const bidonWeP = '/images/bidon.webp';
@@ -117,7 +117,7 @@ const Carousel = () => {
             else cardClass += " hidden";
 
             return (
-              <motion.div
+              <div
                 key={i}
                 className={cardClass}
                 onClick={() => updateCarousel(i)}
@@ -126,27 +126,16 @@ const Carousel = () => {
                   touchEndX.current = e.changedTouches[0].screenX;
                   handleSwipe();
                 }}
-                whileTap={{ scale: 0.95 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
               >
                 <img src={member.image} alt={member.name} />
                 <div className="member-info">
                   <div className="member-name">{member.name}</div>
                   <div className="member-role">{member.role}</div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
-
-        {/* Flechas desactivadas por ahora
-        <div className="nav-arrow left" onClick={() => updateCarousel(currentIndex - 1)}>
-          &#8249;
-        </div>
-        <div className="nav-arrow right" onClick={() => updateCarousel(currentIndex + 1)}>
-          &#8250;
-        </div> */}
 
         <div className="member-info">
           <div className="member-name">{teamMembers[currentIndex].name}</div>
