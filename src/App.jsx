@@ -153,8 +153,8 @@ function App() {
             position: 'sticky',
             top: 0,
             zIndex: 1000,
-            transition: 'all 0.3s ease-in-out',
-            backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : 'transparent',
+            backgroundColor: scrolled ? 'rgb(255, 255, 255)' : 'transparent',
+            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
             backdropFilter: scrolled ? 'blur(5px)' : 'none',
           }}
         >

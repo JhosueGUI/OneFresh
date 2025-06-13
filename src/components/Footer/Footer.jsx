@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/Footer.css'; // Assuming you have a CSS file for styles
 const logoWebP = '/images/one-fresh-logo.webp';
 const telefonoWebP = '/images/footer/telefono.webp';
 
@@ -10,6 +11,7 @@ function Footer() {
           {/* Logo y eslogan */}
           <div >
             <img
+              className="logo"
               src={logoWebP}
               alt="One Fresh Logo"
               style={{ height: '100px', marginRight: '10px' }}

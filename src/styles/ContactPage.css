@@ -1,0 +1,21 @@
+@media screen and (max-width: 960px) {
+    .primerdiv {
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .primerdiv .contactos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:5%;
+    }
+}
+@media screen and (max-width: 594px) {
+
+    .primerdiv .contactos {
+        display: flex;
+        flex-direction: column;;
+    }
+}

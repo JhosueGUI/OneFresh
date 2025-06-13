@@ -4,6 +4,7 @@ import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
+import '../../styles/ContactPage.css'; // Assuming you have a CSS file for styles
 
 function ContactPage() {
   const containerVariants = {
@@ -17,9 +18,46 @@ function ContactPage() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+  const slideUp = {
+    initial: { y: 50, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    transition: { duration: 0.5 },
+    viewport: { once: true, amount: 0.5 },
+  };
 
   return (
-    <div style={{ backgroundColor: '#f0f4f8' }}>
+    <div >
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        backgroundImage: 'url(/images/contacto/fondo.webp)', /* Establece la imagen como fondo */
+        backgroundSize: 'cover', /* Cubre todo el área del div */
+        backgroundPosition: 'center', /* Centra la imagen de fondo */
+        backgroundRepeat: 'no-repeat', /* Evita que la imagen se repita */
+        minHeight: '500px', /* Asegura que el div tenga una altura para que la imagen se vea */
+        display: 'flex', /* Usa flexbox para alinear el contenido */
+        alignItems: 'center', /* Centra verticalmente el contenido */
+        justifyContent: 'flex-start', /* Alinea el contenido al inicio (izquierda) */
+        paddingLeft: '5%', /* Opcional: Añade un poco de espacio desde el borde izquierdo del div principal */
+      }}>
+        <motion.div
+          style={{
+            width: '30%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px',
+          }}
+          {...slideUp}
+          transition={{ duration: 0.7, delay: 0.3 }} // Slower transition with a slight delay
+        >
+          <span style={{ display: 'block', fontWeight: 'bold', fontSize: '40px', marginBottom: '10px', textAlign: 'left', color: '#textAligntextAlign' }}>
+            <span style={{ color: '#1685f9' }}>Contáctanos</span>
+          </span>
+          <span style={{ textAlign: 'justify' }}>
+            Si tienes preguntas, comentarios o necesitas más información sobre nuestros productos, por favor contáctanos.
+          </span>
+        </motion.div>
+      </div>
       <motion.div
         initial="hidden"
         animate="visible"
@@ -38,42 +76,46 @@ function ContactPage() {
 
       >
         {/* Lado Izquierdo - Información de contacto */}
-        <motion.div variants={fadeInUp} style={{
-          flex: 1, minWidth: '280px', background: 'rgb(22, 133, 249)', padding: '2em', borderRight: '12px',borderLeft:'12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)'}}>
-          <h1 style={{ fontSize: '2.5rem', color: '#fff' }}>
+
+        <motion.div className='primerdiv' variants={fadeInUp} style={{ flex: 1, minWidth: '280px', borderTopLeftRadius: '12px', borderEndStartRadius: '12px', background: 'rgb(22, 133, 249)', padding: '4em', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+          <span style={{ fontSize: '2.5rem', color: '#fff', fontWeight: '600' }}>
             ¡Estamos listos para <span style={{ color: '#a1e1e8' }}>atenderte!</span>
-          </h1>
+          </span>
           <p style={{ fontSize: '1.1rem', color: '#fff', margin: '1em 0', textAlign: 'justify' }}>
             Llame a nuestra oficina o complete el formulario de contacto. Le responderemos dentro de 24 horas.
           </p>
 
           <div style={{ marginTop: '2em' }}>
-            <motion.p variants={fadeInUp} style={{ fontWeight: 600, fontSize: '1.2rem', color:'#a1e1e8' }}>
+            <motion.p variants={fadeInUp} style={{ fontWeight: 600, fontSize: '1.2rem', color: '#a1e1e8' }}>
               Información de contacto
             </motion.p>
+            <div className="contactos">
+              <motion.div variants={fadeInUp} style={{ display: 'flex', alignItems: 'center', marginTop: '1em' }}>
+                <img src="/iconos/listos/telefono.png" alt="Teléfono" style={{ width: 24, marginRight: 10 }} />
+                <span style={{ color: '#fff' }}>(51) 908 906 872</span>
+              </motion.div>
 
-            <motion.div variants={fadeInUp} style={{ display: 'flex', alignItems: 'center', marginTop: '1em' }}>
-              <img src="/iconos/listos/telefono.png" alt="Teléfono" style={{ width: 24, marginRight: 10 }} />
-              <span style={{ color: '#fff' }}>(51) 908 906 872</span>
-            </motion.div>
+              <motion.div variants={fadeInUp} style={{ display: 'flex', alignItems: 'center', marginTop: '0.8em' }}>
+                <img src="/iconos/listos/correo.png" alt="Correo" style={{ width: 24, marginRight: 10 }} />
+                <span style={{ color: '#fff' }}>ventas@jrprodesa.pe</span>
+              </motion.div>
+            </div>
 
-            <motion.div variants={fadeInUp} style={{ display: 'flex', alignItems: 'center', marginTop: '0.8em' }}>
-              <img src="/iconos/listos/correo.png" alt="Correo" style={{ width: 24, marginRight: 10 }} />
-              <span style={{ color: '#fff' }}>ventas@jrprodesa.pe</span>
-            </motion.div>
           </div>
         </motion.div>
 
         {/* Lado Derecho - Formulario */}
         <motion.div
+          className='segundodiv'
           variants={fadeInUp}
-          style={{ flex: 1, minWidth: '300px' }}
+          style={{ flex: 1, minWidth: '600px' }}
         >
           <Card
-            title="¿Cómo podemos ayudarte?"
+            title={<div style={{ textAlign: 'center' }}>¿Cómo podemos ayudarte?</div>} // Centering the title
             style={{
               borderRadius: '12px',
               boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+              padding: '4em', // Increased internal spacing (padding)
             }}
           >
             <motion.form
@@ -116,13 +158,23 @@ function ContactPage() {
                 whileTap={{ scale: 0.97 }}
                 style={{ alignSelf: 'flex-end', marginTop: '1em' }}
               >
-                <Button
-                  label="Enviar Mensaje"
-                  icon="pi pi-send"
-                  backgroundColor="#1E40AF"
-                  className="p-button-primary p-button-lg"
-                />
+
               </motion.div>
+
+              {/* New section for terms and conditions */}
+              <motion.div variants={fadeInUp} style={{ display: 'flex', flexDirection: 'row', textAlign: 'center' }}>
+                <input type="checkbox" id="termsAccepted" style={{ marginRight: '0.5em' }} />
+                <label htmlFor="termsAccepted" style={{ fontSize: '0.9em', color: '#555', textAlign: 'justify' }}>
+                  He leído y acepto los Términos y Condiciones y las Políticas de uso de datos personales.
+                </label>
+              </motion.div>
+              <Button
+                label="Enviar Mensaje"
+                icon="pi pi-send"
+                backgroundColor="#1E40AF"
+                className="p-button-primary p-button-lg"
+              />
+
             </motion.form>
           </Card>
         </motion.div>
@@ -131,7 +183,7 @@ function ContactPage() {
       {/* Sección del Mapa */}
       <div style={{ width: '100%', marginTop: '4em' }}> {/* Added margin-top for spacing */}
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d243.9102634280279!2d-76.869187!3d-12.004627!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c30068da7b3d%3A0x11f1c4f347000b9d!2sONE%20FRESH!5e0!3m2!1ses!2spe!4v1749759131307!5m2!1ses!2spe" // <-- IMPORTANT: Replace this with your actual Google Maps embed URL
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1951.2809251266904!2d-76.87023820911662!3d-12.004790259891216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c30068da7b3d%3A0x11f1c4f347000b9d!2sONE%20FRESH!5e0!3m2!1ses!2spe!4v1749779451458!5m2!1ses!2spe" // <-- IMPORTANT: Replace this with your actual Google Maps embed URL
           width="100%"
           height="400"
           allowFullScreen="" // Added `allowFullScreen` as recommended by Google Maps embeds

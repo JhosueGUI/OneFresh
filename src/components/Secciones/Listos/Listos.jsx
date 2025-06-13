@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "primereact/button";
+import '../../../styles/Listos.css'; // Assuming you have a CSS file for styles
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
@@ -31,13 +32,13 @@ const Listos = () => {
                 </span>
             </motion.div>
 
-            <motion.div className="1" style={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', gap: '40px' }} variants={fadeInUp}>
+            <motion.div className="div2" style={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', gap: '40px' }} variants={fadeInUp}>
                 <span style={{ fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
                     <img src="/iconos/listos/telefono.png" alt="Telefono" style={{ width: '40px', height: '40px', marginRight: '8px' }} />
                     +51 908 906 872
                 </span>
 
-                <div style={{ width: '1px', height: '40px', backgroundColor: '#fff' }} />
+                <div className="div22" style={{ width: '1px', height: '40px', backgroundColor: '#fff' }} />
 
                 <span style={{ fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
                     <img src="/iconos/listos/correo.png" alt="Correo" style={{ width: '40px', height: '40px', marginRight: '8px' }} />
@@ -56,6 +57,7 @@ const Listos = () => {
                         width: '14%',
                         height: '55px',
                         fontSize: '16px',
+                        width: '200px',
                         fontWeight: '600',
                         color: '#fff',
                         background: '#1685f9'

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Carousel.css";
+import "../../../styles/Carousel.css"; // Assuming you have a CSS file for styles
 import { Button } from "primereact/button";
 import { motion } from "framer-motion";
 
@@ -72,12 +73,14 @@ const Carousel = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <span style={{ fontSize: '48px', fontWeight: '600', display: 'flex', flexDirection: 'column' }}>
+        <div >
+          <span className="texto" style={{ fontSize: '48px', fontWeight: '600', display: 'flex', flexDirection: 'column' }}>
           Nuestras <span style={{ color: '#1685f9' }}>Presentaciones</span>
         </span>
         <span style={{ textAlign: 'justify' }}>
           En OneFresh, te ofrecemos soluciones completas para mantenerte hidratado: desde nuestras prácticas Botellas Personales ideales para llevar a todos lados, hasta Bidones de mayor capacidad para tu hogar u oficina, y Dispensadores que garantizan un acceso fácil y rápido al agua. Personaliza cada producto para que refleje tu estilo o marca, ¡y convierte la hidratación en una experiencia cómoda y con estilo!
         </span>
+        </div>
         <div className="1" style={{ display: 'flex', width: '100%' }}>
           <Button
             label="Consultar ahora"

@@ -35,7 +35,7 @@ function AboutPage() {
       <div style={{
         position: 'relative',
         width: '100%',
-        backgroundImage: 'url(/images/nosotros/image.svg)', /* Establece la imagen como fondo */
+        backgroundImage: 'url(/images/nosotros/image.webp)', /* Establece la imagen como fondo */
         backgroundSize: 'cover', /* Cubre todo el área del div */
         backgroundPosition: 'center', /* Centra la imagen de fondo */
         backgroundRepeat: 'no-repeat', /* Evita que la imagen se repita */
@@ -55,7 +55,7 @@ function AboutPage() {
           {...slideUp} // Apply slide-up animation
           transition={{ duration: 0.7, delay: 0.3 }} // Slower transition with a slight delay
         >
-          <span style={{ display: 'block', fontWeight: 'bold', fontSize: '40px', marginBottom: '10px', textAlign: 'left', color: '#332F30' }}>
+          <span style={{ display: 'block', fontWeight: 'bold', fontSize: '40px', marginBottom: '10px', textAlign: 'left', color: '#textAligntextAlign' }}>
             Acerca de <span style={{ color: '#1685f9' }}>nosotros</span>
           </span>
           <span style={{ textAlign: 'justify' }}>
@@ -75,7 +75,7 @@ function AboutPage() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'stretch',
-          gap: '20px',
+          gap: '50px',
           padding: '0 5%',
           width: '100%',
           boxSizing: 'border-box',
@@ -146,7 +146,7 @@ function AboutPage() {
         transition={{ delay: 0.4 }}
       >
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
-          <span style={{ fontSize: '48px', fontWeight: '600' }}>Nuestros<span style={{ color: '#1685f9' }}>Valores</span> </span>
+          <span style={{display:'flex', fontSize: '48px', fontWeight: '600', gap:'10px' }}>Nuestros<span style={{ color: '#1685f9' }}>Valores</span> </span>
         </div>
         <div style={{
           display: 'flex',
@@ -162,7 +162,7 @@ function AboutPage() {
             left: '0',
             right: '0',
             height: '2px',
-            backgroundColor: '#1685f9',
+            backgroundColor: '#a1e1e8',
             zIndex: 0,
             transform: 'translateY(-50%)',
           }}></div>
@@ -211,7 +211,7 @@ function AboutPage() {
           {/* Value Card: Nos gustan los retos */}
           <motion.div
             style={{
-              backgroundColor: '#545454',
+              backgroundColor: '#1685f9',
               color: '#ffffff',
               padding: '20px',
               borderRadius: '12px',
@@ -230,7 +230,7 @@ function AboutPage() {
             transition={{ delay: 0.2 }} // Stagger animation
           >
             <div style={{
-              backgroundColor: '#1685f9',
+              backgroundColor: '#a1e1e8',
               width: '60px',
               height: '60px',
               borderRadius: '50%',
@@ -295,7 +295,7 @@ function AboutPage() {
           {/* Value Card: Bien común */}
           <motion.div
             style={{
-              backgroundColor: '#545454',
+              backgroundColor: '#1685f9',
               color: '#ffffff',
               padding: '20px',
               borderRadius: '12px',
@@ -314,7 +314,7 @@ function AboutPage() {
             transition={{ delay: 0.6 }} // Stagger animation
           >
             <div style={{
-              backgroundColor: '#1685f9',
+              backgroundColor: '#a1e1e8',
               width: '60px',
               height: '60px',
               borderRadius: '50%',
