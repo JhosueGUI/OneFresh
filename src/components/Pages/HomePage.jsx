@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../styles/HomePage.css';
-import Inspiracion from '../../pages/inspiracion/Inspiracion';
 import Presentacion from '../../pages/presentacion/Presentacion';
+import Novedades from '../../pages/novedades/Novedades';
+import Inspiracion from '../../pages/inspiracion/Inspiracion';
 
 function HomePage() {
   return (
@@ -16,6 +17,7 @@ function HomePage() {
       <Presentacion/>
 
       <Inspiracion/>
+      <Novedades/>
     </>
 
   );
