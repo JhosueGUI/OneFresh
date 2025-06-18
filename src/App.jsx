@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
-import HomePage from './components/Pages/HomePage';
 import AboutPage from './components/Pages/AboutPage';
 import ContactPage from './components/Pages/ContactPage';
 import Footer from './components/Footer/Footer';
 import TopBanner from './components/Header/TopBanner';
 import HeroBanner from './components/Header/HeroBanner';
 import 'leaflet/dist/leaflet.css';
-
+import HomePage from './components/Pages/HomePage';
+<a href="https://lordicon.com/">Icons by Lordicon.com</a>
 function App() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -179,7 +179,7 @@ function App() {
             <Route path="/nosotros" element={<AboutPage />} />
             <Route path="/productos" element={<HomePage />} />
             <Route path="/ventas-corporativas" element={<HomePage />} />
-            <Route path="/boletin" element={<HomePage />} />
+            <Route path="/boletin" element={<HomePage/>} />
             <Route path="/galeria" element={<HomePage />} />
             <Route path="/contacto" element={<ContactPage />} />
           </Routes>

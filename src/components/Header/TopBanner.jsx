@@ -9,7 +9,7 @@ function TopBanner() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       style={{
-        backgroundColor: '#1685f9', // Usando el azul principal de tu paleta
+        backgroundColor: '#06b6d4', // Usando el azul principal de tu paleta
         color: 'white',
         padding: '8px 20px',
         fontSize: '0.9em',
