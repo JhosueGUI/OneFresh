@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/HomePage.css';
-import Inspiracion from '../../pages/Inspiracion/Inspiracion';
+import Inspiracion from '../../pages/inspiracion/Inspiracion';
 import Presentacion from '../../pages/presentacion/Presentacion';
 
 function HomePage() {
