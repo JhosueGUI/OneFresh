@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Button } from 'primereact/button';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -14,6 +15,11 @@ function Promocion() {
         autoplay: true,
         autoplaySpeed: 3000,
     };
+
+    const titleRef = useRef(null);
+    const paragraphRef = useRef(null);
+    const isTitleInView = useInView(titleRef, { once: true, margin: '-100px' });
+    const isParagraphInView = useInView(paragraphRef, { once: true, margin: '-100px' });
 
     return (
         <div className="promocion-container">
@@ -66,12 +72,25 @@ function Promocion() {
                             maxWidth: '600px',
                         }}
                     >
-                        <h1 style={{ fontSize: '2.5em', marginBottom: '20px' }}>
+                        <motion.h1
+                            ref={titleRef}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.8, ease: 'easeOut' }}
+                            style={{ fontSize: '2.5em', marginBottom: '20px' }}
+                        >
                             Nuestras Promociones
-                        </h1>
-                        <p style={{ fontSize: '1.1em', lineHeight: '1.6', marginBottom: '30px' }}>
-                            Desliza y Descubre las promociones vigentes que Agua Rosalía tiene para ti
-                        </p>
+                        </motion.h1>
+
+                        <motion.p
+                            ref={paragraphRef}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isParagraphInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+                            style={{ fontSize: '1.1em', lineHeight: '1.6', marginBottom: '30px' }}
+                        >
+                            Desliza y Descubre las promociones que se encuentran vigentes que Agua One Fresh tiene para ti
+                        </motion.p>
 
                         <div
                             className="gota"
@@ -91,6 +110,7 @@ function Promocion() {
                             Conoce más
                             <img
                                 src="/images/Importancia/animacion1.webp"
+                                alt=""
                                 style={{ width: '40px', height: '40px', marginLeft: '10px' }}
                             />
                         </div>

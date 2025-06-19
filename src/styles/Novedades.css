@@ -1,0 +1,18 @@
+@media screen and (max-width: 5700px) {
+    .fondo7{
+        height: 100%;
+        width: 100%;
+    }
+    
+}@media screen and (max-width: 1237px) {
+    
+    .fondo7{
+        height: 1000px;
+    }
+}
+@media screen and (max-width: 847px) {
+    
+    .fondo7{
+        height: 1400px;
+    }
+}

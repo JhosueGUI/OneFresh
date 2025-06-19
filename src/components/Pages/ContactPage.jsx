@@ -51,10 +51,10 @@ function ContactPage() {
           transition={{ duration: 0.7, delay: 0.3 }} // Slower transition with a slight delay
         >
           <span style={{ display: 'block', fontWeight: 'bold', fontSize: '40px', marginBottom: '10px', textAlign: 'left', color: '#textAligntextAlign' }}>
-            <span style={{ color: '#06b6d4' }}>Contáctanos</span>
+            Deseas <span style={{ color: '#06b6d4' }}>Contáctarnos</span>
           </span>
           <span style={{ textAlign: 'justify' }}>
-            Si tienes preguntas, comentarios o necesitas más información sobre nuestros productos, por favor contáctanos.
+            Si tienes preguntas, comentarios o necesitas más información sobre nuestros productos, por favor contáctanos. Registre sus datos y en breve nos pondremos en contacto con usted.
           </span>
         </motion.div>
       </div>

@@ -9,6 +9,10 @@ import HeroBanner from './components/Header/HeroBanner';
 import 'leaflet/dist/leaflet.css';
 import HomePage from './components/Pages/HomePage';
 import GaleriaPage from './components/Pages/GaleriaPage';
+import ScrollToTop from './components/Navegador/ScrollToTop';
+import Promociones from './components/Pages/Promociones';
+
+
 <a href="https://lordicon.com/">Icons by Lordicon.com</a>
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,30 +47,10 @@ function App() {
       ),
     },
     {
-      label: 'Productos',
+      label: 'Promociones',
       icon: 'pi pi-shopping-cart',
       template: (item, options) => (
-        <Link to="/productos" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
-          <span className="p-menuitem-text">{item.label}</span>
-        </Link>
-      ),
-    },
-    {
-      label: 'Ventas Corporativas',
-      icon: 'pi pi-building',
-      template: (item, options) => (
-        <Link to="/ventas-corporativas" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <span className={item.icon} style={{ marginRight: '.5em' }}></span>
-          <span className="p-menuitem-text">{item.label}</span>
-        </Link>
-      ),
-    },
-    {
-      label: 'Boletín',
-      icon: 'pi pi-send',
-      template: (item, options) => (
-        <Link to="/boletin" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/promociones" className={options.className} style={{ textDecoration: 'none', color: 'inherit' }}>
           <span className={item.icon} style={{ marginRight: '.5em' }}></span>
           <span className="p-menuitem-text">{item.label}</span>
         </Link>
@@ -144,6 +128,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop/>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <TopBanner />
 
@@ -178,9 +163,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/nosotros" element={<AboutPage />} />
-            <Route path="/productos" element={<HomePage />} />
-            <Route path="/ventas-corporativas" element={<HomePage />} />
-            <Route path="/boletin" element={<HomePage/>} />
+            <Route path="/promociones" element={<Promociones />} />
             <Route path="/galeria" element={<GaleriaPage />} />
             <Route path="/contacto" element={<ContactPage />} />
           </Routes>

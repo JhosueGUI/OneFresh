@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Button } from 'primereact/button';
 import '../../styles/Inspiracion.css';
+
 function Inspiracion() {
+    const titleRef = useRef(null);
+    const paragraphRef = useRef(null);
+
+    const isTitleInView = useInView(titleRef, { once: true, margin: '-100px' });
+    const isParagraphInView = useInView(paragraphRef, { once: true, margin: '-100px' });
+
     return (
         <div
             style={{
@@ -11,7 +19,7 @@ function Inspiracion() {
                 overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center', // Centrado horizontal
+                justifyContent: 'center',
                 boxSizing: 'border-box',
             }}
         >
@@ -33,7 +41,7 @@ function Inspiracion() {
 
             {/* Contenido */}
             <div
-                className='gota-container'
+                className="gota-container"
                 style={{
                     position: 'relative',
                     zIndex: 1,
@@ -44,7 +52,11 @@ function Inspiracion() {
                     padding: '0 20px',
                 }}
             >
-                <h1
+                <motion.h1
+                    ref={titleRef}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="titulo"
                     style={{
                         fontSize: '2.5em',
@@ -52,9 +64,13 @@ function Inspiracion() {
                     }}
                 >
                     Nuestra Inspiración
-                </h1>
+                </motion.h1>
 
-                <p
+                <motion.p
+                    ref={paragraphRef}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isParagraphInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
                     className="descripcion"
                     style={{
                         fontSize: '1.1em',
@@ -63,11 +79,11 @@ function Inspiracion() {
                         textAlign: 'justify',
                     }}
                 >
-                    Perú es un país de una gran riqueza cultural. Agua Rosella es una marca que
+                    Perú es un país de una gran riqueza cultural. Agua One Fresh es una marca que
                     representa a las mujeres del Perú. Nos inspiramos en las "Princesas de la Realeza
                     Inca", quienes tuvieron un rol protagónico al contraer nupcias con descendientes
                     españoles.
-                </p>
+                </motion.p>
 
                 <div
                     className="gota"

@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import '../../styles/ContactPage.css';
-import ChromaGrid from '../../pages/galeria/ChromaGrid';
-function GaleriaPage() {
+
+function Promociones() {
     const slideUp = {
         initial: { y: 50, opacity: 0 },
         whileInView: { y: 0, opacity: 1 },
@@ -16,7 +16,7 @@ function GaleriaPage() {
             <div style={{
                 position: 'relative',
                 width: '100%',
-                backgroundImage: 'url(/images/galeria/fondo78.webp)',
+                backgroundImage: 'url(/images/promociones/fondo.webp)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -37,30 +37,48 @@ function GaleriaPage() {
                     transition={{ duration: 0.7, delay: 0.3 }}
                 >
                     <span style={{
-                        display: 'flex',
-                        flexDirection: 'column',
+                        display: 'block',
                         fontWeight: 'bold',
                         fontSize: '40px',
                         marginBottom: '10px',
                         textAlign: 'left',
                         color: '#000',
                     }}>
-                        ¡Nuestra Galeria<span style={{ color: '#06b6d4' }}> de Fotos!</span>
+                        ¡Adquiere Nuestras <span style={{ color: '#06b6d4' }}>Promociones!</span>
                     </span>
                     <span style={{ textAlign: 'justify', color: '#000' }}>
-                        Un espacio donde capturamos momentos especiales, experiencias únicas y los detalles que nos representan. 
-  Explora cada imagen y descubre la esencia de lo que somos.
+                        Tenemos las mejores promociones dirigidas a nuestros distribuidores, a nuestros
+                        puntos de venta y para los consumidores. ¡Atentos que se vienen más promociones!
                     </span>
                 </motion.div>
             </div>
 
             {/* Sección adicional con título y 3 imágenes grandes */}
-            <div style={{backgroundColor: '#f0f0f0', padding: '20px',textAlign: 'center'}}>
-      {/* Pasamos items como undefined o un array vacío si quieres usar el demo */}
-      <ChromaGrid items={[]} />
-    </div>
+            <div style={{ padding: '100px 5%',display:'flex',flexDirection:'column',gap:'60px' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '36px', color: '#333' }}>
+                    Promociones al <span style={{ color: '#06b6d4' }}>Consumidor</span>
+                </h2>
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: '40px',
+                }}>
+                    {[1, 2, 3].map((num) => (
+                        <div key={num} style={{
+                            width: '420px',
+                            height: '380px',
+                            backgroundImage: `url(/images/promociones/pro${num}.webp)`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            borderRadius: '16px',
+                            boxShadow: '0 6px 12px rgba(0,0,0,0.15)',
+                        }} />
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }
 
-export default GaleriaPage;
+export default Promociones;

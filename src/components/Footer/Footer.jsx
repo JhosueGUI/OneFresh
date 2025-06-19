@@ -9,7 +9,7 @@ function Footer() {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div className="contenedor" style={{ display: 'flex', justifyContent: 'space-between', width: '80%', gap: '1.5em' }}>
           {/* Logo y eslogan */}
-          <div >
+          <div className='logo'>
             <img
               className="logo"
               src={logoWebP}
@@ -19,31 +19,31 @@ function Footer() {
           </div>
 
           {/* Lista de Exámenes */}
-          <div >
-            <h4>Lista de Exámenes</h4>
-            <p>Hemograma</p>
-            <p>Descarte de VPH</p>
-            <p><a href="#" style={{ textDecoration: 'underline' }}>Ver más...</a></p>
+          <div className='examen'> 
+            <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Contenido</p>
+            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ textDecoration: 'none' }}>Nuestras Presentaciones</a></p>
+            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ textDecoration: 'none' }}>Nuestras Inspiración</a></p>
+            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ textDecoration: 'none' }}>Nuestras Promociones</a></p>
           </div>
 
           {/* Acerca de Nosotros */}
-          <div >
+          <div className='acerca'>
             <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Acerca de Nosotros</p>
-            <p style={{color:'#332F30'}}><a href="#" style={{ textDecoration: 'underline' }}>¿Quiénes somos?</a></p>
+            <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/admin.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} /><a href="/nosotros" style={{ textDecoration: 'none' }}>¿Quiénes somos?</a></p>
           </div>
 
           {/* Sedes */}
-          <div >
+          <div className='sede'> 
             <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Sede</p>
             <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/ubicacion.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} />Calle Piura Mz B Lt 8-A  Lurigancho – Lima</p>
-            <p><a href="#" style={{ textDecoration: 'underline' }}>Ver más...</a></p>
+            <p><a href="/contacto" style={{ textDecoration: 'none' }}>Ver más...</a></p>
           </div>
 
           {/* Contacto */}
-          <div >
+          <div className='contacto'>
             <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Contacto</p>
-            <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/telefono.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> (51) 908 906 872</p>
-            <p style={{ display: 'flex',color:'#332F30'}}><img src="/iconos/listos/correo.png" alt="Correo" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> ventas@jrprodesa.pe</p>
+            <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/telefono2.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> (51) 908 906 872</p>
+            <p style={{ display: 'flex',color:'#332F30'}}><img src="/iconos/listos/correo2.png" alt="Correo" style={{ width: '25px', height: '25px', marginRight: '8px' }} /> ventas@jrprodesa.pe</p>
           </div>
 
         </div>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import '../../styles/HomePage.css';
 import '../../styles/Presentacion.css';
 import Slider from 'react-slick';
@@ -13,22 +14,21 @@ function NextArrow(props) {
             className={className}
             style={{
                 ...style,
-                display: 'block',
-                background: 'rgba(6, 182, 212, 0.7)', // A semi-transparent cyan background
-                borderRadius: '50%', // Make it circular
-                padding: '10px', // Add some padding inside the circle
-                right: '-50px', // Position it outside the slider to the right
-                width: '40px', // Ensure the width is consistent
-                height: '40px', // Ensure the height is consistent
-                zIndex: 2, // Ensure it's above other elements
-                display: 'flex', // Use flexbox for centering content
-                alignItems: 'center', // Center vertically
-                justifyContent: 'center', // Center horizontally
-                boxShadow: '0 2px 5px rgba(0,0,0,0.2)', // Subtle shadow
+                background: 'rgba(6, 182, 212, 0.7)',
+                borderRadius: '50%',
+                padding: '10px',
+                right: '-50px',
+                width: '40px',
+                height: '40px',
+                zIndex: 2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
             }}
             onClick={onClick}
         >
-            <i className="pi pi-angle-right" style={{ color: 'white', fontSize: '1.5em' }}></i> {/* PrimeReact icon */}
+            <i className="pi pi-angle-right" style={{ color: 'white', fontSize: '1.5em' }}></i>
         </div>
     );
 }
@@ -41,22 +41,21 @@ function PrevArrow(props) {
             className={className}
             style={{
                 ...style,
-                display: 'block',
-                width: '40px', // Ensure the width is consistent
-                height: '40px', // Ensure the height is consistent
-                background: 'rgba(6, 182, 212, 0.7)', // A semi-transparent cyan background
-                borderRadius: '50%', // Make it circular
-                padding: '10px', // Add some padding inside the circle
-                left: '-50px', // Position it outside the slider to the left
-                zIndex: 2, // Ensure it's above other elements
-                display: 'flex', // Use flexbox for centering content
-                alignItems: 'center', // Center vertically
-                justifyContent: 'center', // Center horizontally
-                boxShadow: '0 2px 5px rgba(0,0,0,0.2)', // Subtle shadow    
+                background: 'rgba(6, 182, 212, 0.7)',
+                borderRadius: '50%',
+                padding: '10px',
+                left: '-50px',
+                width: '40px',
+                height: '40px',
+                zIndex: 2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
             }}
             onClick={onClick}
         >
-            <i className="pi pi-angle-left" style={{ color: 'white', fontSize: '1.5em' }}></i> {/* PrimeReact icon */}
+            <i className="pi pi-angle-left" style={{ color: 'white', fontSize: '1.5em' }}></i>
         </div>
     );
 }
@@ -70,8 +69,8 @@ function Presentacion() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        nextArrow: <NextArrow />, // Assign the custom NextArrow component
-        prevArrow: <PrevArrow />, // Assign the custom PrevArrow component
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         responsive: [
             {
                 breakpoint: 1240,
@@ -99,6 +98,9 @@ function Presentacion() {
         ]
     };
 
+    const titleRef = useRef(null);
+    const isInView = useInView(titleRef, { once: true, margin: '-100px' });
+
     return (
         <div className="home-page-container" style={{ position: 'relative' }}>
             <img
@@ -116,15 +118,21 @@ function Presentacion() {
                 maxWidth: '1000px',
                 zIndex: 1
             }}
-            className="mi-carrusel">
+                className="mi-carrusel">
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
-                    <h2 style={{
-                        textAlign: 'center',
-                        marginBottom: '50px',
-                        fontSize: '3em',
-                    }}>
-                        Conoce nuestras<span style={{ color: '#06b6d4' }}> Presentaciones</span>
-                    </h2>
+                    <motion.h2
+                        ref={titleRef}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        style={{
+                            textAlign: 'center',
+                            marginBottom: '50px',
+                            fontSize: '3em',
+                        }}
+                    >
+                        Conoce nuestras <span style={{ color: '#06b6d4' }}>Presentaciones</span>
+                    </motion.h2>
                     <i className="pi pi-sort-down-fill" style={{ color: '#06b6d4', fontSize: '2em' }}></i>
                 </div>
                 <Slider {...settings} className="mi-carrusel">
