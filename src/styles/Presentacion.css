@@ -1,0 +1,26 @@
+@media screen and (max-width: 5700px) {
+    .fondo6{
+        height: 100%;
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 1900px) {
+    .fondo6{
+        height: 900px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1240px) {
+    .mi-carrusel{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 900px;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+    }
+}
+
+

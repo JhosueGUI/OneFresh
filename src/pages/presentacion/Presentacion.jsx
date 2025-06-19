@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/HomePage.css';
+import '../../styles/Presentacion.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -73,7 +74,7 @@ function Presentacion() {
         prevArrow: <PrevArrow />, // Assign the custom PrevArrow component
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1240,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -103,7 +104,7 @@ function Presentacion() {
             <img
                 src="/images/fondo6.webp"
                 alt="Background"
-                className="responsive-background-image"
+                className="fondo6"
             />
 
             <div style={{
@@ -114,7 +115,8 @@ function Presentacion() {
                 width: '90%',
                 maxWidth: '1000px',
                 zIndex: 1
-            }}>
+            }}
+            className="mi-carrusel">
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
                     <h2 style={{
                         textAlign: 'center',
@@ -125,7 +127,7 @@ function Presentacion() {
                     </h2>
                     <i className="pi pi-sort-down-fill" style={{ color: '#06b6d4', fontSize: '2em' }}></i>
                 </div>
-                <Slider {...settings}>
+                <Slider {...settings} className="mi-carrusel">
                     <div>
                         <div style={{ padding: '4%' }}>
                             <img
