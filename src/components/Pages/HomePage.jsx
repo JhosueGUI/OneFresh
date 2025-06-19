@@ -3,7 +3,7 @@ import '../../styles/HomePage.css';
 import Presentacion from '../../pages/presentacion/Presentacion';
 import Novedades from '../../pages/novedades/Novedades';
 import Inspiracion from '../../pages/inspiracion/Inspiracion';
-import Promocion from '../../pages/promocion/promocion';
+import Promocion from '../../pages/promocion/Promocion';
 
 function HomePage() {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
