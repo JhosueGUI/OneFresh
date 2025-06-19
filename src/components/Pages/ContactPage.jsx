@@ -51,7 +51,7 @@ function ContactPage() {
           transition={{ duration: 0.7, delay: 0.3 }} // Slower transition with a slight delay
         >
           <span style={{ display: 'block', fontWeight: 'bold', fontSize: '40px', marginBottom: '10px', textAlign: 'left', color: '#textAligntextAlign' }}>
-            <span style={{ color: '#1685f9' }}>Contáctanos</span>
+            <span style={{ color: '#06b6d4' }}>Contáctanos</span>
           </span>
           <span style={{ textAlign: 'justify' }}>
             Si tienes preguntas, comentarios o necesitas más información sobre nuestros productos, por favor contáctanos.
@@ -77,7 +77,7 @@ function ContactPage() {
       >
         {/* Lado Izquierdo - Información de contacto */}
 
-        <motion.div className='primerdiv' variants={fadeInUp} style={{ flex: 1, minWidth: '280px', borderTopLeftRadius: '12px', borderEndStartRadius: '12px', background: 'rgb(22, 133, 249)', padding: '4em', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+        <motion.div className='primerdiv' variants={fadeInUp} style={{ flex: 1, minWidth: '280px', borderTopLeftRadius: '12px', borderEndStartRadius: '12px', background: '#06b6d4', padding: '4em', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
           <span style={{ fontSize: '2.5rem', color: '#fff', fontWeight: '600' }}>
             ¡Estamos listos para <span style={{ color: '#a1e1e8' }}>atenderte!</span>
           </span>

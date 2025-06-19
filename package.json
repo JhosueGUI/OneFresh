@@ -13,6 +13,7 @@
     "@glidejs/glide": "^3.7.1",
     "aos": "^2.3.4",
     "framer-motion": "^12.16.0",
+    "gsap": "^3.13.0",
     "leaflet": "^1.9.4",
     "nuka-carousel": "^8.2.0",
     "ogl": "^1.0.11",

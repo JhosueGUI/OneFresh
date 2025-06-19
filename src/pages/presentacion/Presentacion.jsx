@@ -112,7 +112,7 @@ function Presentacion() {
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 width: '90%',
-                maxWidth: '1500px',
+                maxWidth: '1000px',
                 zIndex: 1
             }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>

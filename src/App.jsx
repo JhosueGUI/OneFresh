@@ -8,6 +8,7 @@ import TopBanner from './components/Header/TopBanner';
 import HeroBanner from './components/Header/HeroBanner';
 import 'leaflet/dist/leaflet.css';
 import HomePage from './components/Pages/HomePage';
+import GaleriaPage from './components/Pages/GaleriaPage';
 <a href="https://lordicon.com/">Icons by Lordicon.com</a>
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -180,7 +181,7 @@ function App() {
             <Route path="/productos" element={<HomePage />} />
             <Route path="/ventas-corporativas" element={<HomePage />} />
             <Route path="/boletin" element={<HomePage/>} />
-            <Route path="/galeria" element={<HomePage />} />
+            <Route path="/galeria" element={<GaleriaPage />} />
             <Route path="/contacto" element={<ContactPage />} />
           </Routes>
         </main>

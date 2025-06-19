@@ -56,7 +56,7 @@ function AboutPage() {
           transition={{ duration: 0.7, delay: 0.3 }} // Slower transition with a slight delay
         >
           <span style={{ display: 'block', fontWeight: 'bold', fontSize: '40px', marginBottom: '10px', textAlign: 'left', color: '#textAligntextAlign' }}>
-            Acerca de <span style={{ color: '#1685f9' }}>nosotros</span>
+            Acerca de <span style={{ color: '#06b6d4' }}>nosotros</span>
           </span>
           <span style={{ textAlign: 'justify' }}>
             One Fresh es una marca de la empresa JR Proyecto & Desarrollo Sac, proveemos a nuestros clientes con productos de la más alta calidad en agua purificada y embotellada cumpliendo con los más altos estándares en purificación, producción y empaque con el objetivo de alcanzar la máxima eficiencia y satisfacción de nuestros clientes.
@@ -146,7 +146,7 @@ function AboutPage() {
         transition={{ delay: 0.4 }}
       >
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
-          <span style={{display:'flex', fontSize: '48px', fontWeight: '600', gap:'10px' }}>Nuestros<span style={{ color: '#1685f9' }}>Valores</span> </span>
+          <span style={{display:'flex', fontSize: '48px', fontWeight: '600', gap:'10px' }}>Nuestros<span style={{ color: '#06b6d4' }}>Valores</span> </span>
         </div>
         <div style={{
           display: 'flex',
@@ -188,7 +188,7 @@ function AboutPage() {
             viewport={{ once: true, amount: 0.5 }} // Ensure these specific viewport settings are applied
           >
             <div style={{
-              backgroundColor: '#1685f9',
+              backgroundColor: '#06b6d4',
               width: '60px',
               height: '60px',
               borderRadius: '50%',
@@ -211,7 +211,7 @@ function AboutPage() {
           {/* Value Card: Nos gustan los retos */}
           <motion.div
             style={{
-              backgroundColor: '#1685f9',
+              backgroundColor: '#06b6d4',
               color: '#ffffff',
               padding: '20px',
               borderRadius: '12px',
@@ -272,7 +272,7 @@ function AboutPage() {
             transition={{ delay: 0.4 }} // Stagger animation
           >
             <div style={{
-              backgroundColor: '#1685f9',
+              backgroundColor: '#06b6d4',
               width: '60px',
               height: '60px',
               borderRadius: '50%',
@@ -295,7 +295,7 @@ function AboutPage() {
           {/* Value Card: Bien común */}
           <motion.div
             style={{
-              backgroundColor: '#1685f9',
+              backgroundColor: '#06b6d4',
               color: '#ffffff',
               padding: '20px',
               borderRadius: '12px',
@@ -356,7 +356,7 @@ function AboutPage() {
             transition={{ delay: 0.8 }} // Stagger animation
           >
             <div style={{
-              backgroundColor: '#1685f9',
+              backgroundColor: '#06b6d4',
               width: '60px',
               height: '60px',
               borderRadius: '50%',
