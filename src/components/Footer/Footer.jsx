@@ -21,22 +21,22 @@ function Footer() {
           {/* Lista de Exámenes */}
           <div className='examen'> 
             <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Contenido</p>
-            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ textDecoration: 'none' }}>Nuestras Presentaciones</a></p>
-            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ textDecoration: 'none' }}>Nuestras Inspiración</a></p>
-            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ textDecoration: 'none' }}>Nuestras Promociones</a></p>
+            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ color: 'black', textDecoration: 'none' }}>Nuestras Presentaciones</a></p>
+            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ color: 'black', textDecoration: 'none' }}>Nuestras Inspiración</a></p>
+            <p style={{ display: 'flex',color:'#332F30' }}><a href="/nosotros" style={{ color: 'black', textDecoration: 'none' }}>Nuestras Promociones</a></p>
           </div>
 
           {/* Acerca de Nosotros */}
           <div className='acerca'>
             <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Acerca de Nosotros</p>
-            <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/admin.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} /><a href="/nosotros" style={{ textDecoration: 'none' }}>¿Quiénes somos?</a></p>
+            <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/admin.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} /><a href="/nosotros" style={{ color: 'black', textDecoration: 'none' }}>¿Quiénes somos?</a></p>
           </div>
 
           {/* Sedes */}
           <div className='sede'> 
             <p style={{fontSize:'20px',fontWeight:'500',color:'#332F30'}}>Sede</p>
             <p style={{ display: 'flex',color:'#332F30' }}><img src="/iconos/listos/ubicacion.png" alt="Telefono" style={{ width: '25px', height: '25px', marginRight: '8px' }} />Calle Piura Mz B Lt 8-A  Lurigancho – Lima</p>
-            <p><a href="/contacto" style={{ textDecoration: 'none' }}>Ver más...</a></p>
+            <p><a href="/contacto" style={{ textDecoration: 'none', color: 'black' }}>Ver más...</a></p>
           </div>
 
           {/* Contacto */}

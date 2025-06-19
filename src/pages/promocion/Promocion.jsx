@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Button } from 'primereact/button';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import '../../styles/Promocion.css';
 
 function Promocion() {
     const settings = {
@@ -14,6 +14,15 @@ function Promocion() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
 
     const titleRef = useRef(null);
@@ -27,13 +36,13 @@ function Promocion() {
                 style={{
                     position: 'relative',
                     width: '100%',
-                    height: '100vh',
+                    minHeight: '100vh',
                     overflow: 'hidden',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxSizing: 'border-box',
                     padding: '0 5%',
+                    boxSizing: 'border-box',
                 }}
             >
                 {/* Fondo */}
@@ -56,20 +65,24 @@ function Promocion() {
                 <div
                     style={{
                         display: 'flex',
-                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
                         alignItems: 'center',
                         width: '100%',
                         maxWidth: '1400px',
                         zIndex: 1,
                         gap: '40px',
+                        padding: '40px 0',
                     }}
                 >
                     {/* Texto */}
                     <div
+                        className="texto-container"
                         style={{
                             color: 'white',
                             textAlign: 'left',
                             maxWidth: '600px',
+                            flex: '1 1 300px',
                         }}
                     >
                         <motion.h1
@@ -89,15 +102,15 @@ function Promocion() {
                             transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
                             style={{ fontSize: '1.1em', lineHeight: '1.6', marginBottom: '30px' }}
                         >
-                            Desliza y Descubre las promociones que se encuentran vigentes que Agua One Fresh tiene para ti
+                            Desliza y descubre las promociones vigentes que Agua One Fresh tiene para ti.
                         </motion.p>
 
                         <div
+                            
                             className="gota"
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',
-                                marginBottom: '20px',
                                 background: '#06b6d4',
                                 width: '70%',
                                 maxWidth: '250px',
@@ -105,6 +118,8 @@ function Promocion() {
                                 borderRadius: '10px',
                                 justifyContent: 'center',
                                 fontWeight: '600',
+                                marginBottom: '20px',
+                                cursor: 'pointer',
                             }}
                         >
                             Conoce más
@@ -117,23 +132,19 @@ function Promocion() {
                     </div>
 
                     {/* Carrusel */}
-                    <div style={{ flex: 1, maxWidth: '1000px' }}>
+                    <div style={{ flex: '1 1 300px', maxWidth: '1000px', width: '100%' }}>
                         <Slider {...settings}>
-                            <div>
-                                <div style={{ padding: '4%' }}>
-                                    <img src="/images/promociones/pro1.webp" alt="Banner 1" style={{ width: '100%', borderRadius: '10px' }} />
+                            {[1, 2, 3].map((num) => (
+                                <div key={num}>
+                                    <div style={{ padding: '4%' }}>
+                                        <img
+                                            src={`/images/promociones/pro${num}.webp`}
+                                            alt={`Banner ${num}`}
+                                            style={{ width: '100%', borderRadius: '10px' }}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div style={{ padding: '4%' }}>
-                                    <img src="/images/promociones/pro2.webp" alt="Banner 2" style={{ width: '100%', borderRadius: '10px' }} />
-                                </div>
-                            </div>
-                            <div>
-                                <div style={{ padding: '4%' }}>
-                                    <img src="/images/promociones/pro3.webp" alt="Banner 3" style={{ width: '100%', borderRadius: '10px' }} />
-                                </div>
-                            </div>
+                            ))}
                         </Slider>
                     </div>
                 </div>
