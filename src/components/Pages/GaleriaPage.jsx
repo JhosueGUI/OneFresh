@@ -27,31 +27,19 @@ function GaleriaPage() {
         paddingLeft: '5%',
       }}>
         <motion.div
-          style={{
-            width: '30%',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '20px',
-          }}
-          {...slideUp}
-          transition={{ duration: 0.7, delay: 0.3 }}
-        >
-          <span style={{
-            display: 'flex',
-            flexDirection: 'column',
-            fontWeight: 'bold',
-            fontSize: '40px',
-            marginBottom: '10px',
-            textAlign: 'left',
-            color: '#000',
-          }}>
-            ¡Nuestra Galeria<span style={{ color: '#06b6d4' }}> de Fotos!</span>
-          </span>
-          <span style={{ textAlign: 'justify', color: '#000' }}>
-            Un espacio donde capturamos momentos especiales, experiencias únicas y los detalles que nos representan.
-            Explora cada imagen y descubre la esencia de lo que somos.
-          </span>
-        </motion.div>
+  className="galeria-text-container"
+  {...slideUp}
+  transition={{ duration: 0.7, delay: 0.3 }}
+>
+  <span className="galeria-title">
+    ¡Nuestra Galeria <span style={{ color: '#06b6d4' }}>de Fotos!</span>
+  </span>
+  <span className="galeria-desc">
+    Un espacio donde capturamos momentos especiales, experiencias únicas y los detalles que nos representan.
+    Explora cada imagen y descubre la esencia de lo que somos.
+  </span>
+</motion.div>
+
       </div>
 
       {/* Sección adicional con título y 3 imágenes grandes */}

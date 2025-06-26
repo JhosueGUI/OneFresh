@@ -1,21 +1,34 @@
-@media screen and (max-width: 960px) {
-    .primerdiv {
-        border-radius: 12px;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    .primerdiv .contactos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap:5%;
-    }
+.galeria-text-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-@media screen and (max-width: 594px) {
 
-    .primerdiv .contactos {
-        display: flex;
-        flex-direction: column;;
-    }
+.galeria-title {
+  display: block;
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #000;
+}
+
+.galeria-desc {
+  text-align: justify;
+  color: #000;
+}
+
+@media screen and (max-width: 960px) {
+  .galeria-text-container {
+    width: 90% !important;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .galeria-title,
+  .galeria-desc {
+    text-align: center !important;
+  }
 }

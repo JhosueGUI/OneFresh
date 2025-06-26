@@ -27,26 +27,14 @@ function Promociones() {
                 paddingLeft: '5%',
             }}>
                 <motion.div
-                    style={{
-                        width: '30%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '20px',
-                    }}
+                    className="promo-text-container"
                     {...slideUp}
                     transition={{ duration: 0.7, delay: 0.3 }}
                 >
-                    <span style={{
-                        display: 'block',
-                        fontWeight: 'bold',
-                        fontSize: '40px',
-                        marginBottom: '10px',
-                        textAlign: 'left',
-                        color: '#000',
-                    }}>
+                    <span className="promo-title">
                         ¡Adquiere Nuestras <span style={{ color: '#06b6d4' }}>Promociones!</span>
                     </span>
-                    <span style={{ textAlign: 'justify', color: '#000' }}>
+                    <span className="promo-desc">
                         Tenemos las mejores promociones dirigidas a nuestros distribuidores, a nuestros
                         puntos de venta y para los consumidores. ¡Atentos que se vienen más promociones!
                     </span>
@@ -54,7 +42,7 @@ function Promociones() {
             </div>
 
             {/* Sección adicional con título y 3 imágenes grandes */}
-            <div style={{ padding: '100px 5%',display:'flex',flexDirection:'column',gap:'60px' }}>
+            <div style={{ padding: '100px 5%', display: 'flex', flexDirection: 'column', gap: '60px' }}>
                 <h2 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '36px', color: '#333' }}>
                     Promociones al <span style={{ color: '#06b6d4' }}>Consumidor</span>
                 </h2>
