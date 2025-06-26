@@ -27,36 +27,31 @@ function ContactPage() {
 
   return (
     <div >
-      <div style={{
-        position: 'relative',
-        width: '100%',
-        backgroundImage: 'url(/images/contacto/fondo.webp)', /* Establece la imagen como fondo */
-        backgroundSize: 'cover', /* Cubre todo el área del div */
-        backgroundPosition: 'center', /* Centra la imagen de fondo */
-        backgroundRepeat: 'no-repeat', /* Evita que la imagen se repita */
-        minHeight: '500px', /* Asegura que el div tenga una altura para que la imagen se vea */
-        display: 'flex', /* Usa flexbox para alinear el contenido */
-        alignItems: 'center', /* Centra verticalmente el contenido */
-        justifyContent: 'flex-start', /* Alinea el contenido al inicio (izquierda) */
-        paddingLeft: '5%', /* Opcional: Añade un poco de espacio desde el borde izquierdo del div principal */
-      }}>
-        <motion.div
-          style={{
-            width: '30%',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '20px',
-          }}
-          {...slideUp}
-          transition={{ duration: 0.7, delay: 0.3 }} // Slower transition with a slight delay
-        >
-          <span style={{ display: 'block', fontWeight: 'bold', fontSize: '40px', marginBottom: '10px', textAlign: 'left', color: '#textAligntextAlign' }}>
+
+      <div
+        
+        style={{
+          position: 'relative',
+          width: '100%',
+          backgroundImage: 'url(/images/contacto/fondo.webp)', /* Establece la imagen como fondo */
+          backgroundSize: 'cover', /* Cubre todo el área del div */
+          backgroundPosition: 'center', /* Centra la imagen de fondo */
+          backgroundRepeat: 'no-repeat', /* Evita que la imagen se repita */
+          minHeight: '500px', /* Asegura que el div tenga una altura para que la imagen se vea */
+          display: 'flex', /* Usa flexbox para alinear el contenido */
+          alignItems: 'center', /* Centra verticalmente el contenido */
+          justifyContent: 'flex-start', /* Alinea el contenido al inicio (izquierda) */
+          paddingLeft: '5%', /* Opcional: Añade un poco de espacio desde el borde izquierdo del div principal */
+        }}>
+        <motion.div className="contacto-text-container" {...slideUp} transition={{ duration: 0.7, delay: 0.3 }}>
+          <span className="contacto-title">
             Deseas <span style={{ color: '#06b6d4' }}>Contáctarnos</span>
           </span>
-          <span style={{ textAlign: 'justify' }}>
+          <span className="contacto-desc">
             Si tienes preguntas, comentarios o necesitas más información sobre nuestros productos, por favor contáctanos. Registre sus datos y en breve nos pondremos en contacto con usted.
           </span>
         </motion.div>
+
       </div>
       <motion.div
         initial="hidden"

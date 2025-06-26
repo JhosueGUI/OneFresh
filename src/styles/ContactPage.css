@@ -1,34 +1,74 @@
-.galeria-text-container {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Bloque de texto sobre imagen */
+.contacto-text-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.galeria-title {
-  display: block;
-  font-weight: bold;
-  font-size: 40px;
-  margin-bottom: 10px;
-  text-align: left;
-  color: #000;
+.contacto-title {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #000;
 }
 
-.galeria-desc {
-  text-align: justify;
-  color: #000;
+.contacto-desc {
+    text-align: justify;
+    color: #000;
 }
 
+/* Responsivo */
 @media screen and (max-width: 960px) {
-  .galeria-text-container {
-    width: 90% !important;
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-  }
+    .contacto-text-container {
+        width: 90% !important;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
 
-  .galeria-title,
-  .galeria-desc {
-    text-align: center !important;
-  }
+    .contacto-title,
+    .contacto-desc {
+        text-align: center !important;
+    }
+
+    .primerdiv,
+    .segundodiv {
+        border-radius: 5px !important;
+        min-width: 100% !important;
+        text-align: center !important;
+    }
+
+    .segundodiv {
+        min-width: 100% !important;
+    }
+
+    .contactos {
+
+        display: flex;
+        justify-content: center;
+        gap: 10%;
+    }
+
+}
+
+/* Extra pequeño: móvil vertical */
+@media screen and (max-width: 630px) {
+    .contacto-title {
+        font-size: 28px;
+    }
+
+    .contacto-desc {
+        font-size: 14px;
+    }
+
+    .p-card {
+        padding: 2em !important;
+    }
+    .contactos {
+        align-items: center;
+        flex-direction: column;
+
+    }
 }
